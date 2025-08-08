@@ -8,6 +8,31 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Custom CSS for smooth scrolling and animations */
+        .project-description {
+            position: relative;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .project-description.collapsed {
+            max-height: 4.5em; /* Show about 3 lines */
+        }
+        
+        .project-description.expanded {
+            max-height: 500px; /* Enough for full content */
+        }
+        
+        .read-more {
+            color: #3b82f6;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 0.5em;
+            display: inline-block;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
         html {
             scroll-behavior: smooth;
         }
@@ -291,14 +316,17 @@ comfortable working across both technical and non-technical teams
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl">
-                    <h3 class="text-xl font-semibold mb-2">E-commerce Dashboard</h3>
-                    <p class="text-gray-300 mb-4">
-                        A full-featured e-commerce platform with product listings, shopping cart, and payment integration.
-                    </p>
+                    <h3 class="text-xl font-semibold mb-2">Walmart Sales Dashboard</h3>
+                    <div class="project-description collapsed text-gray-300 mb-4">
+                        <p>
+                            Analyzed Walmart sales data in Excel by cleaning and transforming raw store-level transactions. Designed an interactive dashboard with KPI cards tracking total sales, average monthly revenue, top-performing stores, and seasonal trends. Automated data updates with Power Query, reducing manual work by 60%.
+                        </p>
+                    </div>
+                    <div class="read-more" onclick="toggleDescription(this)">Read More</div>
                     <div class="flex flex-wrap gap-2 mb-4">
                         <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Excel</span>
                         <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Power Query</span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">MongoDB</span>
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">VBA</span>
                     </div>
                     <div class="flex space-x-3">
                         <a href="#" class="text-blue-400 hover:text-blue-300 transition">
@@ -312,13 +340,16 @@ comfortable working across both technical and non-technical teams
                 
                 <!-- Project 2 -->
                 <div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl">
-                    <h3 class="text-xl font-semibold mb-2">Task Management App</h3>
-                    <p class="text-gray-300 mb-4">
-                        A productivity application for managing tasks with drag-and-drop functionality and team collaboration.
-                    </p>
+                    <h3 class="text-xl font-semibold mb-2">Book Inventory Analysis</h3>
+                    <div class="project-description collapsed text-gray-300 mb-4">
+                        <p>
+                            Designed a Google Sheets system to track inventory, categorize books, and monitor sales trends. Built visuals to show genre distribution, automated revenue calculations using formulas and filters, and presented insights in a dynamic report.
+                        </p>
+                    </div>
+                    <div class="read-more" onclick="toggleDescription(this)">Read More</div>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Vue.js</span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Firebase</span>
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Google Sheets</span>
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Formulas & Functions </span>
                         <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">TailwindCSS</span>
                     </div>
                     <div class="flex space-x-3">
@@ -333,14 +364,17 @@ comfortable working across both technical and non-technical teams
                 
                 <!-- Project 3 -->
                 <div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl">
-                    <h3 class="text-xl font-semibold mb-2">Weather Dashboard</h3>
-                    <p class="text-gray-300 mb-4">
-                        A weather application that displays current conditions and forecasts using data from multiple APIs.
-                    </p>
+                    <h3 class="text-xl font-semibold mb-2">E-Commerce Analysis</h3>
+                    <div class="project-description collapsed text-gray-300 mb-4">
+                        <p>
+                            Simulated regional sales reporting using Excel by cleaning raw transactional data and designing KPI cards to monitor key performance metrics.
+                        </p>
+                    </div>
+                    <div class="read-more" onclick="toggleDescription(this)">Read More</div>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">JavaScript</span>
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Excel</span>
                         <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">API</span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Chart.js</span>
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Pivot Tables & Charts</span>
                     </div>
                     <div class="flex space-x-3">
                         <a href="#" class="text-blue-400 hover:text-blue-300 transition">
@@ -354,14 +388,17 @@ comfortable working across both technical and non-technical teams
                 
                 <!-- Project 4 -->
                 <div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl">
-                    <h3 class="text-xl font-semibold mb-2">Social Media Dashboard</h3>
-                    <p class="text-gray-300 mb-4">
-                        Analytics dashboard for social media platforms with data visualization and insights.
-                    </p>
+                    <h3 class="text-xl font-semibold mb-2">Netflix Content Analysis</h3>
+                    <div class="project-description collapsed text-gray-300 mb-4">
+                        <p>
+                            Analyzed Netflix’s movie and TV show catalog to uncover trends in content types, release years, ratings, and genres. Created visualizations to highlight patterns in global content distribution.
+                        </p>
+                    </div>
+                    <div class="read-more" onclick="toggleDescription(this)">Read More</div>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">React</span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">D3.js</span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Express</span>
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Pandas</span>
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Python</span>
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">VS Code</span>
                     </div>
                     <div class="flex space-x-3">
                         <a href="#" class="text-blue-400 hover:text-blue-300 transition">
@@ -375,13 +412,16 @@ comfortable working across both technical and non-technical teams
                 
                 <!-- Project 5 -->
                 <div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl">
-                    <h3 class="text-xl font-semibold mb-2">Portfolio Website</h3>
-                    <p class="text-gray-300 mb-4">
-                        A responsive portfolio website built with modern web technologies and animations.
-                    </p>
+                    <h3 class="text-xl font-semibold mb-2">Cohort 6 Participant Engagement</h3>
+                    <div class="project-description collapsed text-gray-300 mb-4">
+                        <p>
+                            Examined participant activity data to measure engagement levels for Afriment Cohort 6 training program.
+                        </p>
+                    </div>
+                    <div class="read-more" onclick="toggleDescription(this)">Read More</div>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">HTML/CSS</span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">JavaScript</span>
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Excel</span>
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Power BI</span>
                         <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">GSAP</span>
                     </div>
                     <div class="flex space-x-3">
@@ -395,7 +435,7 @@ comfortable working across both technical and non-technical teams
                 </div>
             </div>
             <div class="text-center mt-12">
-                <a href="#" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition shadow-lg">
+                <a href="https://github.com/AnabDube/Data-analysis-projects-anab" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition shadow-lg">
                     View All Projects
                 </a>
             </div>
@@ -416,14 +456,14 @@ comfortable working across both technical and non-technical teams
                             <div class="bg-blue-600 p-3 rounded-full mr-4">
                                 <i class="fas fa-certificate text-white text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold">Full Stack Web Development</h3>
+                            <h3 class="text-xl font-semibold">Business Analytics with Excel</h3>
                         </div>
                         <p class="text-gray-300 mb-4">
-                            Advanced certification covering front-end and back-end technologies including React, Node.js, and databases.
+                            Advanced certification covering Excel-based data analysis, including formulas, pivot tables, charts, and data cleaning techniques for business decision-making.
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-blue-400">Udemy</span>
-                            <span class="text-gray-400">June 2022</span>
+                            <span class="text-blue-400">Simplilearn</span>
+                            <span class="text-gray-400">June 2025</span>
                         </div>
                     </div>
                 </div>
@@ -435,14 +475,14 @@ comfortable working across both technical and non-technical teams
                             <div class="bg-blue-600 p-3 rounded-full mr-4">
                                 <i class="fas fa-certificate text-white text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold">JavaScript Algorithms</h3>
+                            <h3 class="text-xl font-semibold">Power BI for Beginners</h3>
                         </div>
                         <p class="text-gray-300 mb-4">
-                            Mastered JavaScript algorithms and data structures through 300+ hours of coding challenges.
+                            Advanced certification covering data modeling, visualization, DAX calculations, and dashboard creation for interactive business intelligence reporting.
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-blue-400">freeCodeCamp</span>
-                            <span class="text-gray-400">March 2021</span>
+                            <span class="text-blue-400">Simplilearn</span>
+                            <span class="text-gray-400">May 2025</span>
                         </div>
                     </div>
                 </div>
@@ -454,14 +494,14 @@ comfortable working across both technical and non-technical teams
                             <div class="bg-blue-600 p-3 rounded-full mr-4">
                                 <i class="fas fa-certificate text-white text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold">UI/UX Design</h3>
+                            <h3 class="text-xl font-semibold">R Programming</h3>
                         </div>
                         <p class="text-gray-300 mb-4">
-                            Comprehensive course on user interface and experience design principles and best practices.
+                            Certification covering statistical analysis, data manipulation, and visualization using R for data-driven research and reporting.
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-blue-400">Coursera</span>
-                            <span class="text-gray-400">November 2020</span>
+                            <span class="text-blue-400">University of Eldoret</span>
+                            <span class="text-gray-400">November 2022</span>
                         </div>
                     </div>
                 </div>
@@ -473,14 +513,14 @@ comfortable working across both technical and non-technical teams
                             <div class="bg-blue-600 p-3 rounded-full mr-4">
                                 <i class="fas fa-certificate text-white text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold">React Native</h3>
+                            <h3 class="text-xl font-semibold">Stata Fundamentals </h3>
                         </div>
                         <p class="text-gray-300 mb-4">
-                            Built 15+ mobile applications using React Native framework with Expo and Firebase integration.
+                            Certification covering data management, statistical modeling, and output interpretation using Stata for applied research.
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-blue-400">Udacity</span>
-                            <span class="text-gray-400">August 2022</span>
+                            <span class="text-blue-400">University of Eldoret</span>
+                            <span class="text-gray-400">April 2023</span>
                         </div>
                     </div>
                 </div>
@@ -492,14 +532,14 @@ comfortable working across both technical and non-technical teams
                             <div class="bg-blue-600 p-3 rounded-full mr-4">
                                 <i class="fas fa-certificate text-white text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold">AWS Certified</h3>
+                            <h3 class="text-xl font-semibold">Afriment AI Bootcamp</h3>
                         </div>
                         <p class="text-gray-300 mb-4">
-                            Cloud Practitioner certification demonstrating knowledge of AWS cloud services and architecture.
+                            Intensive program covering AI fundamentals, machine learning workflows, prompt engineering, and real-world AI project development.
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-blue-400">Amazon Web Services</span>
-                            <span class="text-gray-400">January 2023</span>
+                            <span class="text-blue-400">Afriment</span>
+                            <span class="text-gray-400">July 2025</span>
                         </div>
                     </div>
                 </div>
@@ -511,14 +551,14 @@ comfortable working across both technical and non-technical teams
                             <div class="bg-blue-600 p-3 rounded-full mr-4">
                                 <i class="fas fa-certificate text-white text-xl"></i>
                             </div>
-                            <h3 class="text-xl font-semibold">Agile Methodology</h3>
+                            <h3 class="text-xl font-semibold">Career Essentials in Generative AI</h3>
                         </div>
                         <p class="text-gray-300 mb-4">
-                            Professional Scrum Master certification covering Agile principles and Scrum framework.
+                            Certification covering generative AI concepts, prompt engineering, ethical considerations, and practical AI applications in workflows.
                         </p>
                         <div class="flex justify-between items-center">
-                            <span class="text-blue-400">Scrum.org</span>
-                            <span class="text-gray-400">May 2021</span>
+                            <span class="text-blue-400">Microsoft & LinkedIn</span>
+                            <span class="text-gray-400">August 2025</span>
                         </div>
                     </div>
                 </div>
@@ -546,7 +586,7 @@ comfortable working across both technical and non-technical teams
                             </div>
                             <div>
                                 <h4 class="font-medium">Location</h4>
-                                <p class="text-gray-300">San Francisco, California</p>
+                                <p class="text-gray-300">Nairobi, Kenya</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -555,7 +595,7 @@ comfortable working across both technical and non-technical teams
                             </div>
                             <div>
                                 <h4 class="font-medium">Email</h4>
-                                <p class="text-gray-300">john.doe@example.com</p>
+                                <p class="text-gray-300">anabdube030@gmail.com</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -564,24 +604,22 @@ comfortable working across both technical and non-technical teams
                             </div>
                             <div>
                                 <h4 class="font-medium">Phone</h4>
-                                <p class="text-gray-300">(123) 456-7890</p>
+                                <p class="text-gray-300">+254757078420</p>
                             </div>
                         </div>
                     </div>
                     <div class="mt-8">
                         <h4 class="font-medium mb-4">Follow Me</h4>
                         <div class="flex space-x-4">
-                            <a href="#" class="bg-gray-700 hover:bg-blue-600 text-white p-3 rounded-full transition">
+                            <a href="https://github.com/AnabDube/Data-analysis-projects-anab" target="_blank" class="bg-gray-700 hover:bg-blue-600 text-white p-3 rounded-full transition">
                                 <i class="fab fa-github"></i>
                             </a>
-                            <a href="#" class="bg-gray-700 hover:bg-blue-600 text-white p-3 rounded-full transition">
+                            <a href="https://www.linkedin.com/in/anabdube/" target="_blank" class="bg-gray-700 hover:bg-blue-600 text-white p-3 rounded-full transition">
                                 <i class="fab fa-linkedin-in"></i>
                             </a>
-                            <a href="#" class="bg-gray-700 hover:bg-blue-600 text-white p-3 rounded-full transition">
-                                <i class="fab fa-twitter"></i>
+                            
                             </a>
-                            <a href="#" class="bg-gray-700 hover:bg-blue-600 text-white p-3 rounded-full transition">
-                                <i class="fab fa-instagram"></i>
+                            
                             </a>
                         </div>
                     </div>
@@ -627,24 +665,21 @@ comfortable working across both technical and non-technical teams
     <footer class="bg-gray-900 py-8">
         <div class="container mx-auto px-6 text-center">
             <div class="flex justify-center space-x-6 mb-6">
-                <a href="#" class="text-gray-400 hover:text-blue-400 transition">
+                <a href="https://github.com/AnabDube/Data-analysis-projects-anab" target="_blank" class="text-gray-400 hover:text-blue-400 transition">
                     <i class="fab fa-github text-xl"></i>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-blue-400 transition">
+                <a href="https://www.linkedin.com/in/anabdube/" target="_blank" class="text-gray-400 hover:text-blue-400 transition">
                     <i class="fab fa-linkedin-in text-xl"></i>
                 </a>
-                <a href="#" class="text-gray-400 hover:text-blue-400 transition">
-                    <i class="fab fa-twitter text-xl"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-blue-400 transition">
-                    <i class="fab fa-instagram text-xl"></i>
+                <a href="https://linktr.ee/" target="_blank" class="text-gray-400 hover:text-blue-400 transition">
+                    <i class="fas fa-tree text-xl"></i>
                 </a>
             </div>
             <p class="text-gray-400 mb-2">
-                &copy; 2023 John Doe. All rights reserved.
+                &copy; 2025 Anab Dube. All rights reserved.
             </p>
             <p class="text-gray-500 text-sm">
-                Designed and built with ❤️ by John Doe
+                Designed and built with ❤️ by Anab
             </p>
         </div>
     </footer>
@@ -767,6 +802,16 @@ comfortable working across both technical and non-technical teams
         document.querySelectorAll('.section h2, .section h3, .project-card, .skill-item').forEach(element => {
             observer.observe(element);
         });
+
+        // Toggle project descriptions
+        function toggleDescription(element) {
+            const description = element.previousElementSibling;
+            const isCollapsed = description.classList.contains('collapsed');
+            
+            description.classList.toggle('collapsed');
+            description.classList.toggle('expanded');
+            element.textContent = isCollapsed ? 'Show Less' : 'Read More';
+        }
 
         // Animate skill bars when skills section comes into view
         const skillsObserver = new IntersectionObserver((entries) => {
