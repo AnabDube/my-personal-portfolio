@@ -630,23 +630,23 @@ comfortable working across both technical and non-technical teams
                         </div>
                     </div>
                 </div>
-                <div class="md:w-1/2 w-full mx-auto">
+<div class="md:w-1/2 w-full mx-auto">
   <h3 class="text-xl font-semibold mb-6">Send Me a Message</h3>
-  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html" class="space-y-6">
+  <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6">
     <!-- Full width form fields -->
     <div>
       <label for="name" class="block mb-2 text-gray-300">Full Name</label>
-      <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Your name">
+      <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Your name" required>
     </div>
 
     <div>
       <label for="email" class="block mb-2 text-gray-300">Email Address</label>
-      <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Your email">
+      <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Your email" required>
     </div>
 
     <div>
       <label for="message" class="block mb-2 text-gray-300">Message</label>
-      <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Your message"></textarea>
+      <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition" placeholder="Your message" required></textarea>
     </div>
 
     <!-- Submit button -->
@@ -660,7 +660,6 @@ comfortable working across both technical and non-technical teams
     </div>
   </form>
 </div>
-
 
             </div>
         </div>
