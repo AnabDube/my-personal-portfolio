@@ -1,0 +1,23 @@
+{
+  "name": "my-portfolio",
+  "version": "1.0.0",
+  "description": "---\r title: my-portfolio\r emoji: 🐳\r colorFrom: blue\r colorTo: green\r sdk: static\r pinned: false\r tags:\r   - deepsite\r ---",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnabDube/my-personal-portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnabDube/my-personal-portfolio/issues"
+  },
+  "homepage": "https://github.com/AnabDube/my-personal-portfolio#readme",
+  "dependencies": {
+    "nodemailer": "^7.0.5"
+  }
+}
