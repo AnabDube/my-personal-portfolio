@@ -416,50 +416,29 @@ comfortable working across both technical and non-technical teams
                     </div>
                 </div>
                 
-<!-- Project 5 - Automated EDA & ML -->
-<div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl">
-    <h3 class="text-xl font-semibold mb-2">Automated EDA & ML</h3>
-    <div class="project-description collapsed text-gray-300 mb-4">
-        <p>
-            A web app that automates exploratory data analysis and builds quick ML models.
-        </p>
-    </div>
-    <div class="read-more" onclick="toggleDescription(this)">Read More</div>
-    <div class="flex flex-wrap gap-2 mb-4">
-        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Python</span>
-        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Streamlit</span>
-        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Scikit-learn</span>
-    </div>
-    <div class="flex space-x-3">
-        <a href="https://drive.google.com/file/d/1pa_ZRjqJbkHIssP0GHmy_XE94IU_f0He/view?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-            <i class="fab fa-github"></i> View on GitHub
-        </a>
-    </div>
-</div>
-
-<!-- Project 6 -->
-<div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl">
-    <h3 class="text-xl font-semibold mb-2">Cohort 6 Participant Engagement</h3>
-    <div class="project-description collapsed text-gray-300 mb-4">
-        <p>
-            Examined participant activity data to measure engagement levels for Afriment Cohort 6 training program.
-        </p>
-    </div>
-    <div class="read-more" onclick="toggleDescription(this)">Read More</div>
-    <div class="flex flex-wrap gap-2 mb-4">
-        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Excel</span>
-        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Power BI</span>
-        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">DAX</span>
-    </div>
-    <div class="flex space-x-3">
-        <a href="https://drive.google.com/file/d/1fCsDNPU7EJMtkphb0N7cp9yyD_W5d3f8/view?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-            <i class="fas fa-external-link-alt"></i> Live Demo
-        </a>
-        <a href="https://docs.google.com/presentation/d/1kfzKr-y_ka5dF7JbzPuTbijzYSdkaEbkhjPc51H1k9Y/edit?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-            <i class="fas fa-external-link-alt"></i> Report
-        </a>
-    </div>
-</div>
+                <!-- Project 5 -->
+                <div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl">
+                    <h3 class="text-xl font-semibold mb-2">Cohort 6 Participant Engagement</h3>
+                    <div class="project-description collapsed text-gray-300 mb-4">
+                        <p>
+                            Examined participant activity data to measure engagement levels for Afriment Cohort 6 training program.
+                        </p>
+                    </div>
+                    <div class="read-more" onclick="toggleDescription(this)">Read More</div>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Excel</span>
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Power BI</span>
+                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">DAX</span>
+                    </div>
+                    <div class="flex space-x-3">
+                        <a href="https://drive.google.com/file/d/1fCsDNPU7EJMtkphb0N7cp9yyD_W5d3f8/view?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                        <a href="https://docs.google.com/presentation/d/1kfzKr-y_ka5dF7JbzPuTbijzYSdkaEbkhjPc51H1k9Y/edit?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
+                            <i class="fas fa-external-link-alt"></i> Report
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="text-center mt-12">
                 <a href="https://github.com/AnabDube/Data-analysis-projects-anab" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition shadow-lg">
@@ -601,11 +580,10 @@ comfortable working across both technical and non-technical teams
             </h2>
             <div class="flex flex-col md:flex-row gap-12">
                 <div class="md:w-1/2">
-                    <h3 class="text-xl font-semibold mb-6">Let's Connect & Collaborate</h3>
+                    <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
                     <p class="text-gray-300 mb-8 leading-relaxed">
-                        As a Data Analyst and AI enthusiast, I'm passionate about transforming data into actionable insights.
-                        I'm open to collaborations on data analysis projects, AI initiatives, and research opportunities.
-                        Whether you have a specific project in mind or just want to discuss possibilities, I'd love to hear from you!
+                        Feel free to reach out to me for any questions or opportunities. I'm always open to discussing 
+                        new projects, creative ideas or opportunities to be part of your vision.
                     </p>
                     <div class="space-y-6">
                         <div class="flex items-start">
@@ -691,33 +669,6 @@ comfortable working across both technical and non-technical teams
       required
       class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
       placeholder="Your email"
-    >
-  </div>
-
-  <div>
-    <label for="projectType" class="block mb-2 text-gray-300">Project Type</label>
-    <select
-      id="projectType"
-      name="projectType"
-      required
-      class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-    >
-      <option value="" disabled selected>Select project type</option>
-      <option value="data-analysis">Data Analysis</option>
-      <option value="ai-project">AI Project</option>
-      <option value="research">Research Collaboration</option>
-      <option value="other">Other</option>
-    </select>
-  </div>
-
-  <div>
-    <label for="budget" class="block mb-2 text-gray-300">Budget (optional)</label>
-    <input
-      type="text"
-      id="budget"
-      name="budget"
-      class="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
-      placeholder="Your budget range or estimate"
     >
   </div>
 
