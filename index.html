@@ -909,5 +909,13 @@ comfortable working across both technical and non-technical teams
 
         skillsObserver.observe(document.getElementById('skills'));
 </script>
+<script>
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+
+  mobileMenuButton.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
 </body>
 </html>
