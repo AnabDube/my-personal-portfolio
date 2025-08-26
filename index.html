@@ -309,47 +309,61 @@ comfortable working across both technical and non-technical teams
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section bg-gray-800 py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16">
-                <span class="border-b-4 border-blue-500 pb-2">My Projects</span>
-            </h2>
-            <!-- Filter Buttons -->
-<div class="flex flex-wrap justify-center gap-3 mb-8">
-  <button class="filter-btn px-4 py-2 rounded-full text-sm bg-blue-500 text-white" data-category="all" aria-pressed="true">All</button>
-  <button class="filter-btn px-4 py-2 rounded-full text-sm bg-gray-700 text-white hover:bg-blue-500" data-category="analytics">Data Analytics / BI</button>
-  <button class="filter-btn px-4 py-2 rounded-full text-sm bg-gray-700 text-white hover:bg-blue-500" data-category="spreadsheets">Spreadsheets</button>
-  <button class="filter-btn px-4 py-2 rounded-full text-sm bg-gray-700 text-white hover:bg-blue-500" data-category="ml">AI / ML</button>
-</div>
+<!-- Projects Section -->
+<section id="projects" class="section bg-gray-800 py-20">
+  <div class="container mx-auto px-6">
+    
+    <!-- Section Title -->
+    <h2 class="text-3xl font-bold text-center mb-16">
+      <span class="border-b-4 border-blue-500 pb-2">My Projects</span>
+    </h2>
+
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-3 mb-12">
+      <button class="filter-btn px-4 py-2 rounded-full text-sm bg-blue-500 text-white" data-category="all" aria-pressed="true">All</button>
+      <button class="filter-btn px-4 py-2 rounded-full text-sm bg-gray-700 text-white hover:bg-blue-500" data-category="analytics">Data Analytics / BI</button>
+      <button class="filter-btn px-4 py-2 rounded-full text-sm bg-gray-700 text-white hover:bg-blue-500" data-category="spreadsheets">Spreadsheets</button>
+      <button class="filter-btn px-4 py-2 rounded-full text-sm bg-gray-700 text-white hover:bg-blue-500" data-category="ml">AI / ML</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl" data-category="analytics">
-                    <h3 class="text-xl font-semibold mb-2">Walmart Sales Dashboard</h3>
-                    <div class="project-description collapsed text-gray-300 mb-4">
-                        <p>
-                            Analyzed Walmart sales data in Excel by cleaning and transforming raw store-level transactions. Designed an interactive dashboard with KPI cards tracking total sales, average monthly revenue, top-performing stores, and seasonal trends. Automated data updates with Power Query, reducing manual work by 60%.
-                        </p>
-                    </div>
-                    <div class="read-more" onclick="toggleDescription(this)">Read More</div>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Excel</span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Power Query</span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">VBA</span>
-                    </div>
-                    <div class="flex space-x-3">
-                        <a href="https://drive.google.com/file/d/1X-xPzdkBTSHFi_oBYkTER6sZrFefSpKe/view?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="#" class="text-blue-400 hover:text-blue-300 transition">
-                            <i class="fas fa-file-alt"></i> View Report
-                        </a>
-                        <a href="https://github.com/AnabDube/Data-analysis-projects-anab/blob/main/train_cleaning_query.txt" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-                            <i class="fab fa-github"></i> Code
-                            </a>
-                    </div>
-                </div>
+<!-- Project 1: Walmart Sales -->
+<div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg hover:shadow-xl transition" data-category="analytics">
+
+  <!-- Title -->
+  <h3 class="text-xl font-semibold mb-2">Walmart Sales Dashboard</h3>
+
+  <!-- Short Description -->
+  <p class="text-gray-300 mb-4">
+    Interactive Excel dashboard with Power Query automation, KPIs for sales, and store-level insights.
+  </p>
+
+  <!-- Tech Tags -->
+  <div class="flex flex-wrap gap-2 mb-4">
+    <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Excel</span>
+    <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Power Query</span>
+    <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Data Cleaning</span>
+  </div>
+
+  <!-- Action Links -->
+  <div class="flex flex-col gap-2">
+    <a href="https://drive.google.com/file/d/1X-xPzdkBTSHFi_oBYkTER6sZrFefSpKe/view?usp=sharing" target="_blank" class="project-link">
+      <i class="fas fa-external-link-alt"></i> Live Demo
+    </a>
+    <a href="#" class="project-link">
+      <i class="fas fa-file-alt"></i> View Report
+    </a>
+    <a href="https://github.com/AnabDube/Data-analysis-projects-anab/blob/main/train_cleaning_query.txt" target="_blank" class="project-link">
+      <i class="fab fa-github"></i> Code
+    </a>
+    <a href="walmart.html" target="_blank" class="btn-view-details text-center mt-2">View Details →</a>
+  </div>
+
+</div> <!-- End Project Card -->
+
                 
                 <!-- Project 2 -->
                 <div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl" data-category="spreadsheets">
