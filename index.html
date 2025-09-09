@@ -3,47 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anab Dube Analyst</title>
+    <title>Anab Ali Dube - Data Analyst & AI Enthusiast</title>
+    <meta name="description" content="Professional Data Analyst specializing in Excel, Power BI, Python, SQL, and AI. Transforming raw data into actionable insights through research and storytelling.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* Custom CSS for smooth scrolling and animations */
-        .project-description {
-            position: relative;
-            overflow: hidden;
-            transition: max-height 0.5s ease;
+        /* Base Styles */
+        * {
+            box-sizing: border-box;
         }
         
-        .project-description.collapsed {
-            max-height: 4.5em; /* Show about 3 lines */
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
         }
         
-        .project-description.expanded {
-            max-height: 500px; /* Enough for full content */
-        }
-        
-        .read-more {
-            color: #3b82f6;
-            cursor: pointer;
-            font-size: 0.9em;
-            margin-top: 0.5em;
-            display: inline-block;
-        }
-        
-        .read-more:hover {
-            text-decoration: underline;
-        }
         html {
             scroll-behavior: smooth;
         }
         
-        .section {
-            min-height: 100vh;
-            padding-top: 80px;
+        /* Animated Background Grid */
+        .bg-animated-grid {
+            background-image: 
+                radial-gradient(circle at 25px 25px, rgba(59, 130, 246, 0.1) 2px, transparent 0),
+                radial-gradient(circle at 75px 75px, rgba(99, 102, 241, 0.08) 1px, transparent 0);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px;
+            animation: gridMove 20s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { background-position: 0 0, 25px 25px; }
+            100% { background-position: 50px 50px, 75px 75px; }
+        }
+        
+        /* Dancing Letters Animation */
+        .dancing-text {
+            display: inline-block;
+        }
+        
+        .dancing-letter {
+            display: inline-block;
+            animation: dance 2s ease-in-out infinite;
+            animation-fill-mode: both;
+        }
+        
+        @keyframes dance {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) rotate(0deg) scale(1);
+            }
+            10% {
+                transform: translateY(-10px) rotate(1deg) scale(1.05);
+            }
+            40% {
+                transform: translateY(-5px) rotate(-1deg) scale(1.02);
+            }
+            60% {
+                transform: translateY(-3px) rotate(0.5deg) scale(1.01);
+            }
+        }
+        
+        /* Enhanced Navigation */
+        .nav-gradient {
+            background: linear-gradient(135deg, 
+                rgba(17, 24, 39, 0.95) 0%, 
+                rgba(31, 41, 55, 0.95) 50%,
+                rgba(17, 24, 39, 0.95) 100%);
+            background-size: 200% 200%;
+            animation: navGradient 8s ease infinite;
+        }
+        
+        @keyframes navGradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
         }
         
         .nav-link {
             position: relative;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
         }
         
         .nav-link::after {
@@ -53,36 +94,123 @@
             height: 2px;
             bottom: -2px;
             left: 0;
-            background-color: #3b82f6;
+            background: linear-gradient(90deg, #3b82f6, #6366f1);
             transition: width 0.3s ease;
         }
         
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
+        .nav-link:hover::after,
         .nav-link.active::after {
             width: 100%;
         }
         
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+        .nav-link:hover {
+            color: #60a5fa;
+            transform: translateY(-1px);
         }
         
-        .skill-item:hover .skill-bar {
+        /* Section Styling */
+        .section {
+            min-height: 100vh;
+            padding-top: 80px;
+            position: relative;
+        }
+        
+        /* Enhanced Project Cards */
+        .project-card {
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+        
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
             width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
+            transition: left 0.5s;
         }
         
+        .project-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 20px 40px rgba(59, 130, 246, 0.15),
+                0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card:hover::before {
+            left: 100%;
+        }
+        
+        /* Progress Bars */
         .skill-bar {
-            transition: width 1.5s ease;
+            position: relative;
+            background: rgba(75, 85, 99, 0.3);
+            border-radius: 10px;
+            overflow: hidden;
+            height: 8px;
         }
         
-        /* Animation for section headers */
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, #3b82f6, #6366f1, #8b5cf6);
+            border-radius: 10px;
+            position: relative;
+            transition: width 2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .skill-progress::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        /* Project Description Toggle */
+        .project-description {
+            position: relative;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-description.collapsed {
+            max-height: 4.5em;
+        }
+        
+        .project-description.expanded {
+            max-height: 500px;
+        }
+        
+        .read-more {
+            color: #3b82f6;
+            cursor: pointer;
+            font-size: 0.9em;
+            margin-top: 0.5em;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+            color: #60a5fa;
+        }
+        
+        /* Smooth Animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(20px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -90,40 +218,112 @@
             }
         }
         
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
         .animate-fadeInUp {
             animation: fadeInUp 0.8s ease forwards;
         }
+        
+        .animate-slideInLeft {
+            animation: slideInLeft 0.8s ease forwards;
+        }
+        
+        .animate-slideInRight {
+            animation: slideInRight 0.8s ease forwards;
+        }
+        
+        /* Tech Stack Tags */
+        .tech-tag {
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            transition: all 0.3s ease;
+        }
+        
+        .tech-tag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .dancing-letter {
+                animation-duration: 1.5s;
+            }
+            
+            .project-card:hover {
+                transform: translateY(-4px) scale(1.01);
+            }
+            
+            .nav-link {
+                padding: 0.75rem 1rem;
+                margin: 0.25rem 0;
+                border-radius: 0.5rem;
+                transition: all 0.3s ease;
+            }
+            
+            .nav-link:hover {
+                background: rgba(59, 130, 246, 0.1);
+                transform: translateX(4px);
+            }
+        }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-100 font-sans">
-    <!-- Navigation -->
-<nav class="fixed w-full bg-gray-800/90 backdrop-blur-sm z-50 shadow-md border-b border-gray-700">
-  <div class="container mx-auto px-6 py-3 flex items-center justify-between">
-    <div class="text-2xl font-bold text-blue-400">
-      <span class="text-white">Port</span>folio
-    </div>
-    <div class="hidden md:flex space-x-8">
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#certificates" class="nav-link">Certificates</a>
-      <a href="#contact" class="nav-link">Contact</a>
-    </div>
-    <button id="mobile-menu-button" class="md:hidden text-white">
-      <i class="fas fa-bars text-2xl"></i>
-    </button>
-  </div>
-</nav>
-
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4">
-                <a href="#home" class="block py-2 text-white hover:text-blue-400 transition">Home</a>
-                <a href="#about" class="block py-2 text-white hover:text-blue-400 transition">About</a>
-                <a href="#skills" class="block py-2 text-white hover:text-blue-400 transition">Skills</a>
-                <a href="#projects" class="block py-2 text-white hover:text-blue-400 transition">Projects</a>
-                <a href="#certificates" class="block py-2 text-white hover:text-blue-400 transition">Certificates</a>
-                <a href="#contact" class="block py-2 text-white hover:text-blue-400 transition">Contact</a>
+<body class="bg-gray-900 text-gray-100 bg-animated-grid">
+    <!-- Enhanced Navigation -->
+    <nav class="fixed w-full nav-gradient backdrop-blur-sm z-50 shadow-lg border-b border-gray-700/50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo with Dancing Animation -->
+                <div class="text-xl font-bold">
+                    <span id="animated-title" class="dancing-text text-white">Anab</span>
+                    <span class="text-blue-400 ml-1">Dube</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="nav-link text-white text-sm font-medium">Home</a>
+                    <a href="#about" class="nav-link text-white text-sm font-medium">About</a>
+                    <a href="#projects" class="nav-link text-white text-sm font-medium">Projects</a>
+                    <a href="#skills" class="nav-link text-white text-sm font-medium">Skills</a>
+                    <a href="#certificates" class="nav-link text-white text-sm font-medium">Certificates</a>
+                    <a href="#contact" class="nav-link text-white text-sm font-medium">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="md:hidden text-white hover:text-blue-400 transition-colors">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden hidden mt-4 pb-4 border-t border-gray-700/50">
+                <div class="pt-4 space-y-1">
+                    <a href="#home" class="nav-link block text-white text-sm font-medium">Home</a>
+                    <a href="#about" class="nav-link block text-white text-sm font-medium">About</a>
+                    <a href="#projects" class="nav-link block text-white text-sm font-medium">Projects</a>
+                    <a href="#skills" class="nav-link block text-white text-sm font-medium">Skills</a>
+                    <a href="#certificates" class="nav-link block text-white text-sm font-medium">Certificates</a>
+                    <a href="#contact" class="nav-link block text-white text-sm font-medium">Contact</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -143,7 +343,7 @@
       <!-- Text section -->
       <div class="max-w-2xl text-center md:text-left">
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 animate-fadeInUp">
-          Hi, I'm <span class="text-blue-400">Anab Ali Dube</span>
+          Hi, I'm <span id="hero-name" class="text-blue-400 dancing-text">Anab Ali Dube</span>
         </h1>
         <h2 class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 animate-fadeInUp" style="animation-delay: 0.2s;">
           Data Analyst | Researcher | Storyteller  
@@ -243,99 +443,7 @@ comfortable working across both technical and non-technical teams
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section bg-gray-900 py-20">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center mb-16">
-                <span class="border-b-4 border-blue-500 pb-2">My Skills</span>
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-xl font-semibold mb-6 text-blue-400">Technical Skills</h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="flex items-center p-3 bg-gray-800 rounded-lg">
-                            <i class="fas fa-file-excel text-green-500 text-2xl mr-3"></i>
-                            <span>Excel</span>
-                        </div>
-                        <div class="flex items-center p-3 bg-gray-800 rounded-lg">
-                            <i class="fas fa-chart-line text-yellow-400 text-2xl mr-3"></i>
-                            <span>Power BI</span>
-                        </div>
-                        <div class="flex items-center p-3 bg-gray-800 rounded-lg">
-                            <i class="fab fa-r-project text-blue-400 text-2xl mr-3"></i>
-                            <span>R</span>
-                        </div>
-                        <div class="flex items-center p-3 bg-gray-800 rounded-lg">
-                            <i class="fas fa-database text-blue-300 text-2xl mr-3"></i>
-                            <span>SQL</span>
-                        </div>
-                        <div class="flex items-center p-3 bg-gray-800 rounded-lg">
-                            <i class="fas fa-chart-bar text-purple-400 text-2xl mr-3"></i>
-                            <span>SPSS</span>
-                        </div>
-                        <div class="flex items-center p-3 bg-gray-800 rounded-lg">
-                            <i class="fas fa-chart-pie text-red-400 text-2xl mr-3"></i>
-                            <span>Stata</span>
-                        </div>
-                        <div class="flex items-center p-3 bg-gray-800 rounded-lg">
-                            <i class="fab fa-python text-blue-500 text-2xl mr-3"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="flex items-center p-3 bg-gray-800 rounded-lg">
-                            <i class="fas fa-robot text-blue-300 text-2xl mr-3"></i>
-                            <span>AI</span>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold mb-6 text-blue-400">Professional Skills</h3>
-                    <div class="flex flex-wrap gap-3">
-                        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition">Communication</button>
-                        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition">Teamwork</button>
-                        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition">Project Management</button>
-                        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition">Creativity</button>
-                        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition">Problem Solving</button>
-                        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition">Leadership</button>
-                        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition">Time Management</button>
-                        <button class="px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition">Adaptability</button>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-16">
-                <h3 class="text-xl font-semibold mb-6 text-blue-400 text-center">Tools & Technologies</h3>
-                <div class="flex flex-wrap justify-center gap-6">
-                    <div class="flex flex-col items-center p-4 bg-gray-800 rounded-lg w-24 hover:bg-gray-700 transition">
-                        <i class="fas fa-code text-4xl text-blue-400 mb-2"></i>
-                        <span>VS Code</span>
-                    </div>
-                    <div class="flex flex-col items-center p-4 bg-gray-800 rounded-lg w-24 hover:bg-gray-700 transition">
-                        <i class="fab fa-google text-4xl text-blue-500 mb-2"></i>
-                        <span>Google Workspace</span>
-                    </div>
-                    <div class="flex flex-col items-center p-4 bg-gray-800 rounded-lg w-24 hover:bg-gray-700 transition">
-                        <i class="fab fa-windows text-4xl text-blue-600 mb-2"></i>
-                        <span>MS Office Suite</span>
-                    </div>
-                    <div class="flex flex-col items-center p-4 bg-gray-800 rounded-lg w-24 hover:bg-gray-700 transition">
-                        <i class="fas fa-video text-4xl text-blue-400 mb-2"></i>
-                        <span>Zoom</span>
-                    </div>
-                    <div class="flex flex-col items-center p-4 bg-gray-800 rounded-lg w-24 hover:bg-gray-700 transition">
-                        <i class="fas fa-video text-4xl text-red-500 mb-2"></i>
-                        <span>Google Meet</span>
-                    </div>
-                    <div class="flex flex-col items-center p-4 bg-gray-800 rounded-lg w-24 hover:bg-gray-700 transition">
-                        <i class="fas fa-sticky-note text-4xl text-gray-300 mb-2"></i>
-                        <span>Notion</span>
-                    </div>
-                    <div class="flex flex-col items-center p-4 bg-gray-800 rounded-lg w-24 hover:bg-gray-700 transition">
-                        <i class="fab fa-git-alt text-4xl text-orange-600 mb-2"></i>
-                        <span>Git</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
 
 <!-- Projects Section -->
     <section id="projects" class="section bg-gray-800 py-20">
@@ -362,9 +470,15 @@ comfortable working across both technical and non-technical teams
                     </div>
                     <div class="read-more" onclick="toggleDescription(this)">Read More</div>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Excel</span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Power Query</span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">VBA</span>
+                        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+                            <i class="fas fa-file-excel mr-1"></i> Excel
+                        </span>
+                        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+                            <i class="fas fa-cogs mr-1"></i> Power Query
+                        </span>
+                        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+                            <i class="fas fa-code mr-1"></i> VBA
+                        </span>
                     </div>
                     <div class="flex space-x-3">
                         <a href="https://drive.google.com/file/d/1X-xPzdkBTSHFi_oBYkTER6sZrFefSpKe/view?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
@@ -390,9 +504,15 @@ comfortable working across both technical and non-technical teams
                     </div>
                     <div class="read-more" onclick="toggleDescription(this)">Read More</div>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Google Sheets</span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Formulas & Functions </span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Charts</span>
+                        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+                            <i class="fab fa-google mr-1"></i> Google Sheets
+                        </span>
+                        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+                            <i class="fas fa-function mr-1"></i> Formulas
+                        </span>
+                        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+                            <i class="fas fa-chart-line mr-1"></i> Charts
+                        </span>
                     </div>
                     <div class="flex space-x-3">
                         <a href="https://docs.google.com/presentation/d/17ZEEYYfbYUw6-do1FfR9VEep4n2WsUT9/edit?usp=sharing&ouid=116419039335006847034&rtpof=true&sd=true" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
@@ -414,10 +534,15 @@ comfortable working across both technical and non-technical teams
                     </div>
                     <div class="read-more" onclick="toggleDescription(this)">Read More</div>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Excel</span>
-                        
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Pivot Tables & Charts</span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Julius AI(Python)</span>
+                        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+                            <i class="fas fa-file-excel mr-1"></i> Excel
+                        </span>
+                        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+                            <i class="fas fa-table mr-1"></i> Pivot Tables
+                        </span>
+                        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+                            <i class="fab fa-python mr-1"></i> Python AI
+                        </span>
                     </div>
                     <div class="flex space-x-3">
                         <a href="https://drive.google.com/file/d/1naYevjMT4mABP2UYocT1gnGjudIR1p3C/view?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
@@ -439,9 +564,15 @@ comfortable working across both technical and non-technical teams
                     </div>
                     <div class="read-more" onclick="toggleDescription(this)">Read More</div>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">N8N</span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">OpenAI / ChatGPT API</span>
-                        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Google Sheets</span>
+                        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+                            <i class="fas fa-robot mr-1"></i> N8N
+                        </span>
+                        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+                            <i class="fas fa-brain mr-1"></i> OpenAI API
+                        </span>
+                        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+                            <i class="fab fa-google mr-1"></i> Sheets
+                        </span>
                     </div>
                     <div class="flex space-x-3">
                         <a href="https://drive.google.com/file/d/1bjhqgkY7kmL6Zih8-YScJAiWTya5ODVh/view?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
@@ -463,9 +594,15 @@ comfortable working across both technical and non-technical teams
     </div>
     <div class="read-more" onclick="toggleDescription(this)">Read More</div>
     <div class="flex flex-wrap gap-2 mb-4">
-        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Python</span>
-        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Streamlit</span>
-        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Scikit-learn</span>
+        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+            <i class="fab fa-python mr-1"></i> Python
+        </span>
+        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+            <i class="fas fa-rocket mr-1"></i> Streamlit
+        </span>
+        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+            <i class="fas fa-cogs mr-1"></i> Scikit-learn
+        </span>
     </div>
     <div class="flex space-x-3">
         <a href="https://drive.google.com/file/d/1pa_ZRjqJbkHIssP0GHmy_XE94IU_f0He/view?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
@@ -487,9 +624,15 @@ comfortable working across both technical and non-technical teams
     </div>
     <div class="read-more" onclick="toggleDescription(this)">Read More</div>
     <div class="flex flex-wrap gap-2 mb-4">
-        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Excel</span>
-        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">Power BI</span>
-        <span class="bg-blue-600 text-white text-xs px-2 py-1 rounded">DAX</span>
+        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+            <i class="fas fa-file-excel mr-1"></i> Excel
+        </span>
+        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+            <i class="fas fa-chart-line mr-1"></i> Power BI
+        </span>
+        <span class="tech-tag text-white text-xs px-3 py-1 rounded-full font-medium flex items-center">
+            <i class="fas fa-function mr-1"></i> DAX
+        </span>
     </div>
     <div class="flex space-x-3">
         <a href="https://drive.google.com/file/d/1fCsDNPU7EJMtkphb0N7cp9yyD_W5d3f8/view?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
@@ -505,6 +648,238 @@ comfortable working across both technical and non-technical teams
                 <a href="https://github.com/AnabDube/Data-analysis-projects-anab" target="_blank" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition shadow-lg">
                     View All Projects
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Skills Section -->
+    <section id="skills" class="section bg-gray-900 py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+                <span class="border-b-4 border-blue-500 pb-2">My Skills & Expertise</span>
+            </h2>
+            
+            <!-- Technical Skills with Progress Bars -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+                <div class="animate-slideInLeft">
+                    <h3 class="text-2xl font-semibold mb-8 text-blue-400 flex items-center">
+                        <i class="fas fa-code text-3xl mr-3"></i>
+                        Technical Skills
+                    </h3>
+                    <div class="space-y-6">
+                        <!-- Excel -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-file-excel text-green-500 text-xl mr-3"></i>
+                                    <span class="font-medium">Microsoft Excel</span>
+                                </div>
+                                <span class="text-blue-400 font-semibold">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Python -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fab fa-python text-blue-500 text-xl mr-3"></i>
+                                    <span class="font-medium">Python</span>
+                                </div>
+                                <span class="text-blue-400 font-semibold">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- SQL -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-database text-blue-300 text-xl mr-3"></i>
+                                    <span class="font-medium">SQL</span>
+                                </div>
+                                <span class="text-blue-400 font-semibold">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Power BI -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chart-line text-yellow-400 text-xl mr-3"></i>
+                                    <span class="font-medium">Power BI</span>
+                                </div>
+                                <span class="text-blue-400 font-semibold">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- R -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fab fa-r-project text-blue-400 text-xl mr-3"></i>
+                                    <span class="font-medium">R Programming</span>
+                                </div>
+                                <span class="text-blue-400 font-semibold">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- SPSS -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chart-bar text-purple-400 text-xl mr-3"></i>
+                                    <span class="font-medium">SPSS</span>
+                                </div>
+                                <span class="text-blue-400 font-semibold">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Professional Skills -->
+                <div class="animate-slideInRight">
+                    <h3 class="text-2xl font-semibold mb-8 text-blue-400 flex items-center">
+                        <i class="fas fa-users text-3xl mr-3"></i>
+                        Professional Skills
+                    </h3>
+                    <div class="space-y-6">
+                        <!-- Communication -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-comments text-green-400 text-xl mr-3"></i>
+                                    <span class="font-medium">Communication</span>
+                                </div>
+                                <span class="text-blue-400 font-semibold">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Problem Solving -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-lightbulb text-yellow-400 text-xl mr-3"></i>
+                                    <span class="font-medium">Problem-Solving</span>
+                                </div>
+                                <span class="text-blue-400 font-semibold">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Research & Data Analysis -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-search text-blue-300 text-xl mr-3"></i>
+                                    <span class="font-medium">Research & Data Analysis</span>
+                                </div>
+                                <span class="text-blue-400 font-semibold">92%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Team Collaboration -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-handshake text-purple-400 text-xl mr-3"></i>
+                                    <span class="font-medium">Team Collaboration</span>
+                                </div>
+                                <span class="text-blue-400 font-semibold">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Critical Thinking -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-brain text-pink-400 text-xl mr-3"></i>
+                                    <span class="font-medium">Critical Thinking</span>
+                                </div>
+                                <span class="text-blue-400 font-semibold">87%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 87%"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Project Management -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-tasks text-orange-400 text-xl mr-3"></i>
+                                    <span class="font-medium">Project Management</span>
+                                </div>
+                                <span class="text-blue-400 font-semibold">82%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Tools & Technologies -->
+            <div class="text-center">
+                <h3 class="text-2xl font-semibold mb-8 text-blue-400">Tools & Technologies</h3>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-6">
+                    <div class="flex flex-col items-center p-4 bg-gray-800/50 rounded-xl hover:bg-gray-700/70 transition-all duration-300 hover:scale-105">
+                        <i class="fas fa-code text-3xl text-blue-400 mb-3"></i>
+                        <span class="text-sm font-medium">VS Code</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-800/50 rounded-xl hover:bg-gray-700/70 transition-all duration-300 hover:scale-105">
+                        <i class="fab fa-google text-3xl text-blue-500 mb-3"></i>
+                        <span class="text-sm font-medium">Google Workspace</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-800/50 rounded-xl hover:bg-gray-700/70 transition-all duration-300 hover:scale-105">
+                        <i class="fab fa-windows text-3xl text-blue-600 mb-3"></i>
+                        <span class="text-sm font-medium">MS Office</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-800/50 rounded-xl hover:bg-gray-700/70 transition-all duration-300 hover:scale-105">
+                        <i class="fab fa-git-alt text-3xl text-orange-600 mb-3"></i>
+                        <span class="text-sm font-medium">Git</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-800/50 rounded-xl hover:bg-gray-700/70 transition-all duration-300 hover:scale-105">
+                        <i class="fas fa-chart-pie text-3xl text-red-400 mb-3"></i>
+                        <span class="text-sm font-medium">Stata</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-800/50 rounded-xl hover:bg-gray-700/70 transition-all duration-300 hover:scale-105">
+                        <i class="fas fa-robot text-3xl text-blue-300 mb-3"></i>
+                        <span class="text-sm font-medium">AI Tools</span>
+                    </div>
+                    <div class="flex flex-col items-center p-4 bg-gray-800/50 rounded-xl hover:bg-gray-700/70 transition-all duration-300 hover:scale-105">
+                        <i class="fas fa-sticky-note text-3xl text-gray-300 mb-3"></i>
+                        <span class="text-sm font-medium">Notion</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -798,6 +1173,36 @@ comfortable working across both technical and non-technical teams
     </footer>
 
     <script>
+        // Dancing letters animation for titles
+        function addDancingEffect(element) {
+            const text = element.textContent;
+            element.innerHTML = '';
+            
+            for (let i = 0; i < text.length; i++) {
+                const char = text[i];
+                const span = document.createElement('span');
+                span.className = 'dancing-letter';
+                span.textContent = char === ' ' ? '\u00A0' : char; // Non-breaking space
+                span.style.animationDelay = `${i * 0.1}s`;
+                element.appendChild(span);
+            }
+        }
+        
+        // Initialize dancing animations on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add dancing effect to nav title
+            const navTitle = document.getElementById('animated-title');
+            if (navTitle) {
+                setTimeout(() => addDancingEffect(navTitle), 500);
+            }
+            
+            // Add dancing effect to hero name
+            const heroName = document.getElementById('hero-name');
+            if (heroName) {
+                setTimeout(() => addDancingEffect(heroName), 1000);
+            }
+        });
+        
         // Mobile menu toggle
         document.getElementById('mobile-menu-button').addEventListener('click', function() {
             const menu = document.getElementById('mobile-menu');
@@ -917,23 +1322,27 @@ comfortable working across both technical and non-technical teams
             element.textContent = isCollapsed ? 'Show Less' : 'Read More';
         }
 
-        // Animate skill bars when skills section comes into view
+        // Enhanced skill bars animation
         const skillsObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    document.querySelectorAll('.skill-bar').forEach(bar => {
-                        const width = bar.style.width;
+                    const skillProgressBars = document.querySelectorAll('.skill-progress');
+                    skillProgressBars.forEach((bar, index) => {
+                        const targetWidth = bar.style.width;
                         bar.style.width = '0';
                         setTimeout(() => {
-                            bar.style.width = width;
-                        }, 100);
+                            bar.style.width = targetWidth;
+                        }, index * 100 + 200);
                     });
                     skillsObserver.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.2 });
 
-        skillsObserver.observe(document.getElementById('skills'));
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            skillsObserver.observe(skillsSection);
+        }
 </script>
 <script>
   const mobileMenuButton = document.getElementById("mobile-menu-button");
