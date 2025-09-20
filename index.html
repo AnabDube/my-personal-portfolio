@@ -120,6 +120,7 @@
             position: relative;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             overflow: hidden;
+            border: 1px solid rgba(75, 85, 99, 0.3);
         }
         
         .project-card::before {
@@ -131,17 +132,48 @@
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
             transition: left 0.5s;
+            z-index: 1;
         }
         
         .project-card:hover {
-            transform: translateY(-8px) scale(1.02);
+            transform: translateY(-12px) scale(1.03);
             box-shadow: 
-                0 20px 40px rgba(59, 130, 246, 0.15),
-                0 10px 20px rgba(0, 0, 0, 0.1);
+                0 25px 50px rgba(59, 130, 246, 0.2),
+                0 15px 30px rgba(0, 0, 0, 0.15);
+            border-color: rgba(59, 130, 246, 0.5);
         }
         
         .project-card:hover::before {
             left: 100%;
+        }
+        
+        .project-card:hover .project-title {
+            color: #60a5fa;
+            transform: translateY(-2px);
+        }
+        
+        .project-thumbnail {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+            background: linear-gradient(135deg, #374151, #4b5563);
+            transition: transform 0.4s ease;
+        }
+        
+        .project-card:hover .project-thumbnail {
+            transform: scale(1.05);
+        }
+        
+        .project-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover .project-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .project-title {
+            transition: all 0.3s ease;
         }
         
         /* Progress Bars */
@@ -263,6 +295,29 @@
             box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
         }
         
+        /* Social Media Icons */
+        .social-icon {
+            background: linear-gradient(135deg, rgba(75, 85, 99, 0.8), rgba(55, 65, 81, 0.9));
+            border: 2px solid rgba(59, 130, 246, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            backdrop-filter: blur(10px);
+        }
+        
+        .social-icon:hover {
+            background: linear-gradient(135deg, #3b82f6, #6366f1);
+            border-color: #60a5fa;
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4);
+        }
+        
+        .social-icon i {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover i {
+            transform: scale(1.1);
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .dancing-letter {
@@ -270,7 +325,11 @@
             }
             
             .project-card:hover {
-                transform: translateY(-4px) scale(1.01);
+                transform: translateY(-6px) scale(1.015);
+            }
+            
+            .project-thumbnail {
+                height: 160px;
             }
             
             .nav-link {
@@ -283,6 +342,16 @@
             .nav-link:hover {
                 background: rgba(59, 130, 246, 0.1);
                 transform: translateX(4px);
+            }
+            
+            .grid.lg\:grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .grid.lg\:grid-cols-3 {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -357,6 +426,25 @@
           </a>
           <a href="#projects" class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg transition shadow-lg">
             See My Projects
+          </a>
+        </div>
+        
+        <!-- Social Media Icons -->
+        <div class="flex justify-center md:justify-start space-x-6 mt-6 animate-fadeInUp" style="animation-delay: 0.6s;">
+          <a href="https://github.com/AnabDube" target="_blank" 
+             class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-white" 
+             aria-label="Visit my GitHub profile">
+            <i class="fab fa-github text-xl"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/anabdube/" target="_blank" 
+             class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-white"
+             aria-label="Connect with me on LinkedIn">
+            <i class="fab fa-linkedin-in text-xl"></i>
+          </a>
+          <a href="https://linktr.ee/Anabdube?utm_source=linktree_profile_share&ltsid=5befd6ef-d753-4eca-9482-d4a87a5398e0" target="_blank" 
+             class="social-icon w-12 h-12 rounded-full flex items-center justify-center text-white"
+             aria-label="View my Linktree profile">
+            <i class="fas fa-tree text-xl"></i>
           </a>
         </div>
       </div>
@@ -455,14 +543,25 @@ comfortable working across both technical and non-technical teams
 <div class="flex flex-wrap justify-center gap-3 mb-8">
   <button class="filter-btn px-4 py-2 rounded-full text-sm bg-blue-500 text-white" data-category="all" aria-pressed="true">All</button>
   <button class="filter-btn px-4 py-2 rounded-full text-sm bg-gray-700 text-white hover:bg-blue-500" data-category="analytics">Data Analytics / BI</button>
-  <button class="filter-btn px-4 py-2 rounded-full text-sm bg-gray-700 text-white hover:bg-blue-500" data-category="spreadsheets">Spreadsheets</button>
+  <button class="filter-btn px-4 py-2 rounded-full text-sm bg-gray-700 text-white hover:bg-blue-500" data-category="research">Research & Insights</button>
   <button class="filter-btn px-4 py-2 rounded-full text-sm bg-gray-700 text-white hover:bg-blue-500" data-category="ml">AI / ML</button>
 </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Project 1 -->
-                <div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl" data-category="analytics">
-                    <h3 class="text-xl font-semibold mb-2">Walmart Sales Dashboard</h3>
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden shadow-lg transition duration-500 hover:shadow-xl" data-category="analytics">
+                    <!-- Project Thumbnail -->
+                    <div class="project-thumbnail relative overflow-hidden bg-gradient-to-br from-blue-600 to-blue-800">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="project-icon fas fa-chart-line text-6xl text-white/80"></i>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-blue-500/90 text-white text-xs px-3 py-1 rounded-full font-medium backdrop-blur-sm">Dashboard</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="project-title text-xl font-semibold mb-2">Walmart Sales Dashboard</h3>
                     <div class="project-description collapsed text-gray-300 mb-4">
                         <p>
                             Analyzed Walmart sales data in Excel by cleaning and transforming raw store-level transactions. Designed an interactive dashboard with KPI cards tracking total sales, average monthly revenue, top-performing stores, and seasonal trends. Automated data updates with Power Query, reducing manual work by 60%.
@@ -480,23 +579,35 @@ comfortable working across both technical and non-technical teams
                             <i class="fas fa-code mr-1"></i> VBA
                         </span>
                     </div>
-                    <div class="flex space-x-3">
-                        <a href="https://drive.google.com/file/d/1X-xPzdkBTSHFi_oBYkTER6sZrFefSpKe/view?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-                            <i class="fas fa-external-link-alt"></i> Live Demo
-                        </a>
-                        <a href="#" class="text-blue-400 hover:text-blue-300 transition">
-                            <i class="fas fa-file-alt"></i> View Report
-                        </a>
-                        <a href="https://github.com/AnabDube/Data-analysis-projects-anab/blob/main/train_cleaning_query.txt" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-                            <i class="fab fa-github"></i> Code
+                        <div class="flex space-x-3">
+                            <a href="https://drive.google.com/file/d/1X-xPzdkBTSHFi_oBYkTER6sZrFefSpKe/view?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
+                            <a href="#" class="text-blue-400 hover:text-blue-300 transition">
+                                <i class="fas fa-file-alt"></i> View Report
+                            </a>
+                            <a href="https://github.com/AnabDube/Data-analysis-projects-anab/blob/main/train_cleaning_query.txt" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
+                                <i class="fab fa-github"></i> Code
+                            </a>
+                        </div>
                     </div>
                 </div>
 
                 
                 <!-- Project 2 -->
-                <div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl" data-category="spreadsheets">
-                    <h3 class="text-xl font-semibold mb-2">Book Inventory Analysis</h3>
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden shadow-lg transition duration-500 hover:shadow-xl" data-category="research">
+                    <!-- Project Thumbnail -->
+                    <div class="project-thumbnail relative overflow-hidden bg-gradient-to-br from-green-600 to-emerald-800">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="project-icon fas fa-book-open text-6xl text-white/80"></i>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-green-500/90 text-white text-xs px-3 py-1 rounded-full font-medium backdrop-blur-sm">Research</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="project-title text-xl font-semibold mb-2">Book Inventory Analysis</h3>
                     <div class="project-description collapsed text-gray-300 mb-4">
                         <p>
                             Designed a Google Sheets system to track inventory, categorize books, and monitor sales trends. Built visuals to show genre distribution, automated revenue calculations using formulas and filters, and presented insights in a dynamic report.
@@ -514,19 +625,31 @@ comfortable working across both technical and non-technical teams
                             <i class="fas fa-chart-line mr-1"></i> Charts
                         </span>
                     </div>
-                    <div class="flex space-x-3">
-                        <a href="https://docs.google.com/presentation/d/17ZEEYYfbYUw6-do1FfR9VEep4n2WsUT9/edit?usp=sharing&ouid=116419039335006847034&rtpof=true&sd=true" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-                            <i class="fas fa-external-link-alt"></i> Report
-                        </a>
-                        <a href="https://docs.google.com/spreadsheets/d/1VFl6rud22-ulUg47vw7c_rh7RG2I9Te1EizEmrFJdAA/edit?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
-                            <i class="fas fa-database"></i> View Data
-                        </a>
+                        <div class="flex space-x-3">
+                            <a href="https://docs.google.com/presentation/d/17ZEEYYfbYUw6-do1FfR9VEep4n2WsUT9/edit?usp=sharing&ouid=116419039335006847034&rtpof=true&sd=true" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
+                                <i class="fas fa-external-link-alt"></i> Report
+                            </a>
+                            <a href="https://docs.google.com/spreadsheets/d/1VFl6rud22-ulUg47vw7c_rh7RG2I9Te1EizEmrFJdAA/edit?usp=sharing" target="_blank" class="text-blue-400 hover:text-blue-300 transition">
+                                <i class="fas fa-database"></i> View Data
+                            </a>
+                        </div>
                     </div>
                 </div>
                 
                 <!-- Project 3 -->
-                <div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl" data-category="analytics">
-                    <h3 class="text-xl font-semibold mb-2">E-Commerce Analysis</h3>
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden shadow-lg transition duration-500 hover:shadow-xl" data-category="analytics">
+                    <!-- Project Thumbnail -->
+                    <div class="project-thumbnail relative overflow-hidden bg-gradient-to-br from-purple-600 to-indigo-800">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="project-icon fas fa-shopping-cart text-6xl text-white/80"></i>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-purple-500/90 text-white text-xs px-3 py-1 rounded-full font-medium backdrop-blur-sm">Analytics</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="project-title text-xl font-semibold mb-2">E-Commerce Analysis</h3>
                     <div class="project-description collapsed text-gray-300 mb-4">
                         <p>
                             Simulated regional sales reporting using Excel by cleaning raw transactional data and designing KPI cards to monitor key performance metrics.
@@ -555,8 +678,19 @@ comfortable working across both technical and non-technical teams
                 </div>
                 
                 <!-- Project 4 -->
-                <div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl" data-category="ml">
-                    <h3 class="text-xl font-semibold mb-2">Job Application Tracker Agent</h3>
+                <div class="project-card bg-gray-700 rounded-lg overflow-hidden shadow-lg transition duration-500 hover:shadow-xl" data-category="ml">
+                    <!-- Project Thumbnail -->
+                    <div class="project-thumbnail relative overflow-hidden bg-gradient-to-br from-orange-600 to-red-800">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="project-icon fas fa-robot text-6xl text-white/80"></i>
+                        </div>
+                        <div class="absolute top-4 left-4">
+                            <span class="bg-orange-500/90 text-white text-xs px-3 py-1 rounded-full font-medium backdrop-blur-sm">AI Agent</span>
+                        </div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="project-title text-xl font-semibold mb-2">Job Application Tracker Agent</h3>
                     <div class="project-description collapsed text-gray-300 mb-4">
                         <p>
                             An AI agent that automates the process of tracking job applications, summarizing job postings, and tailoring matches to a resume using web scraping and NLP.
@@ -585,8 +719,19 @@ comfortable working across both technical and non-technical teams
                 </div>
                 
 <!-- Project 5 - Automated EDA & ML -->
-<div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl" data-category="ml">
-    <h3 class="text-xl font-semibold mb-2">Automated EDA & ML</h3>
+<div class="project-card bg-gray-700 rounded-lg overflow-hidden shadow-lg transition duration-500 hover:shadow-xl" data-category="ml">
+    <!-- Project Thumbnail -->
+    <div class="project-thumbnail relative overflow-hidden bg-gradient-to-br from-teal-600 to-cyan-800">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <i class="project-icon fas fa-brain text-6xl text-white/80"></i>
+        </div>
+        <div class="absolute top-4 left-4">
+            <span class="bg-teal-500/90 text-white text-xs px-3 py-1 rounded-full font-medium backdrop-blur-sm">ML/AI</span>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+    </div>
+    <div class="p-6">
+        <h3 class="project-title text-xl font-semibold mb-2">Automated EDA & ML</h3>
     <div class="project-description collapsed text-gray-300 mb-4">
         <p>
             A web app that automates exploratory data analysis and builds quick ML models.
@@ -615,8 +760,19 @@ comfortable working across both technical and non-technical teams
 </div>
 
 <!-- Project 6 -->
-<div class="project-card bg-gray-700 rounded-lg p-6 shadow-lg transition duration-500 hover:shadow-xl" data-category="analytics">
-    <h3 class="text-xl font-semibold mb-2">Cohort 6 Participant Engagement</h3>
+<div class="project-card bg-gray-700 rounded-lg overflow-hidden shadow-lg transition duration-500 hover:shadow-xl" data-category="analytics">
+    <!-- Project Thumbnail -->
+    <div class="project-thumbnail relative overflow-hidden bg-gradient-to-br from-pink-600 to-rose-800">
+        <div class="absolute inset-0 flex items-center justify-center">
+            <i class="project-icon fas fa-users text-6xl text-white/80"></i>
+        </div>
+        <div class="absolute top-4 left-4">
+            <span class="bg-pink-500/90 text-white text-xs px-3 py-1 rounded-full font-medium backdrop-blur-sm">Analytics</span>
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
+    </div>
+    <div class="p-6">
+        <h3 class="project-title text-xl font-semibold mb-2">Cohort 6 Participant Engagement</h3>
     <div class="project-description collapsed text-gray-300 mb-4">
         <p>
             Examined participant activity data to measure engagement levels for Afriment Cohort 6 training program.
@@ -660,11 +816,12 @@ comfortable working across both technical and non-technical teams
             </h2>
             
             <!-- Technical Skills with Progress Bars -->
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
+                <!-- Data Analytics & BI -->
                 <div class="animate-slideInLeft">
                     <h3 class="text-2xl font-semibold mb-8 text-blue-400 flex items-center">
-                        <i class="fas fa-code text-3xl mr-3"></i>
-                        Technical Skills
+                        <i class="fas fa-chart-line text-3xl mr-3"></i>
+                        Data Analytics & BI
                     </h3>
                     <div class="space-y-6">
                         <!-- Excel -->
@@ -753,11 +910,90 @@ comfortable working across both technical and non-technical teams
                     </div>
                 </div>
                 
-                <!-- Professional Skills -->
-                <div class="animate-slideInRight">
-                    <h3 class="text-2xl font-semibold mb-8 text-blue-400 flex items-center">
-                        <i class="fas fa-users text-3xl mr-3"></i>
-                        Professional Skills
+                <!-- AI & Machine Learning -->
+                <div class="animate-slideInLeft" style="animation-delay: 0.2s;">
+                    <h3 class="text-2xl font-semibold mb-8 text-purple-400 flex items-center">
+                        <i class="fas fa-brain text-3xl mr-3"></i>
+                        Artificial Intelligence
+                    </h3>
+                    <div class="space-y-6">
+                        <!-- Generative AI -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-robot text-blue-400 text-xl mr-3"></i>
+                                    <span class="font-medium">Generative AI</span>
+                                </div>
+                                <span class="text-purple-400 font-semibold">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 75%; background: linear-gradient(90deg, #8b5cf6, #a855f7, #c084fc);"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Natural Language Processing -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-language text-green-400 text-xl mr-3"></i>
+                                    <span class="font-medium">Natural Language Processing</span>
+                                </div>
+                                <span class="text-purple-400 font-semibold">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 70%; background: linear-gradient(90deg, #8b5cf6, #a855f7, #c084fc);"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Prompt Engineering -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-magic text-yellow-400 text-xl mr-3"></i>
+                                    <span class="font-medium">Prompt Engineering</span>
+                                </div>
+                                <span class="text-purple-400 font-semibold">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 80%; background: linear-gradient(90deg, #8b5cf6, #a855f7, #c084fc);"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- AI-Assisted Analysis -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-cogs text-orange-400 text-xl mr-3"></i>
+                                    <span class="font-medium">AI-Assisted Analysis</span>
+                                </div>
+                                <span class="text-purple-400 font-semibold">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 85%; background: linear-gradient(90deg, #8b5cf6, #a855f7, #c084fc);"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Machine Learning -->
+                        <div class="skill-item">
+                            <div class="flex justify-between items-center mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-microchip text-red-400 text-xl mr-3"></i>
+                                    <span class="font-medium">Machine Learning</span>
+                                </div>
+                                <span class="text-purple-400 font-semibold">72%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="width: 72%; background: linear-gradient(90deg, #8b5cf6, #a855f7, #c084fc);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Research & Professional Skills -->
+                <div class="animate-slideInRight" style="animation-delay: 0.4s;">
+                    <h3 class="text-2xl font-semibold mb-8 text-green-400 flex items-center">
+                        <i class="fas fa-search text-3xl mr-3"></i>
+                        Research & Insights
                     </h3>
                     <div class="space-y-6">
                         <!-- Communication -->
