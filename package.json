@@ -1,23 +1,36 @@
 {
-  "name": "my-portfolio",
-  "version": "1.0.0",
-  "description": "---\r title: my-portfolio\r emoji: 🐳\r colorFrom: blue\r colorTo: green\r sdk: static\r pinned: false\r tags:\r   - deepsite\r ---",
-  "main": "index.js",
+  "name": "my_portfolio",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AnabDube/my-personal-portfolio.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AnabDube/my-personal-portfolio/issues"
-  },
-  "homepage": "https://github.com/AnabDube/my-personal-portfolio#readme",
   "dependencies": {
-    "nodemailer": "^7.0.5"
+    "@radix-ui/react-checkbox": "^1.3.3",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-progress": "^1.1.7",
+    "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.540.0",
+    "next": "15.4.7",
+    "next-theme": "^0.1.5",
+    "next-themes": "^0.4.6",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "tailwindcss": "^4",
+    "tw-animate-css": "^1.3.7",
+    "typescript": "^5"
   }
 }
