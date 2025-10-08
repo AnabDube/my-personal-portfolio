@@ -39,10 +39,8 @@ export function ContactForm() {
     email: "",
     company: "",
     projectType: "",
-    budget: "",
     timeline: "",
     message: "",
-    newsletter: false,
   })
 
   const handleInputChange = (field: string, value: string | boolean) => {
@@ -64,10 +62,8 @@ export function ContactForm() {
           email: "",
           company: "",
           projectType: "",
-          budget: "",
           timeline: "",
           message: "",
-          newsletter: false,
         })
       } else {
         setSubmitStatus("error")
@@ -86,7 +82,7 @@ export function ContactForm() {
       {submitStatus === "success" && (
         <Alert className="border-green-200 bg-green-50 text-green-800">
           <CheckCircle className="h-4 w-4" />
-          <AlertDescription>Thank you for your message! I'll get back to you within 24 hours.</AlertDescription>
+          <AlertDescription>Thank you, your message has been sent.</AlertDescription>
         </Alert>
       )}
 

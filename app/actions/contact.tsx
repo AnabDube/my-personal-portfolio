@@ -33,54 +33,49 @@ export async function submitContactForm(data: ContactFormData): Promise<ContactF
       }
     }
 
-    // Log the form submission (in a real app, you'd send this to your email service)
-    console.log("[v0] Contact form submission:", {
-      name: data.name,
-      email: data.email,
-      company: data.company,
-      projectType: data.projectType,
-      timeline: data.timeline,
-      message: data.message.substring(0, 100) + "...",
-      timestamp: new Date().toISOString(),
+    // Create the email content
+    const emailContent = `
+New Contact Form Submission
+
+Name: ${data.name}
+Email: ${data.email}
+Company: ${data.company || 'Not specified'}
+Project Type: ${data.projectType}
+Timeline: ${data.timeline || 'Not specified'}
+
+Message:
+${data.message}
+
+---
+This message was sent from your portfolio contact form.
+    `.trim()
+
+    // Call the Netlify function to send the email
+    const baseUrl = process.env.VERCEL_URL || process.env.NEXT_PUBLIC_VERCEL_URL || 'http://localhost:3000'
+    const response = await fetch(`${baseUrl}/.netlify/functions/contact`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: data.name,
+        email: data.email,
+        message: emailContent,
+      }),
     })
 
-    // Simulate email sending delay
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
 
-    // In a real application, you would:
-    // 1. Send email using a service like Resend, SendGrid, or Nodemailer
-    // 2. Store the submission in a database
-    // 3. Add to newsletter list if opted in
-    // 4. Send auto-reply confirmation
-
-    // Example with Resend (commented out):
-    /*
-    import { Resend } from 'resend'
-    const resend = new Resend(process.env.RESEND_API_KEY)
-
-    await resend.emails.send({
-      from: 'Contact Form <anabdube030@gmail.com>',
-      to: 'anabdube030@gmail.com',
-      subject: `New Contact Form Submission from ${data.name}`,
-      html: `
-        <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${data.name}</p>
-        <p><strong>Email:</strong> ${data.email}</p>
-        <p><strong>Company:</strong> ${data.company || 'Not specified'}</p>
-        <p><strong>Project Type:</strong> ${data.projectType}</p>
-        <p><strong>Timeline:</strong> ${data.timeline || 'Not specified'}</p>
-        <p><strong>Message:</strong></p>
-        <p>${data.message}</p>
-      `
-    })
-    */
+    const result = await response.json()
 
     return {
       success: true,
-      message: "Thank you for your message! I'll get back to you soon.",
+      message: "Thank you, your message has been sent.",
     }
   } catch (error) {
-    console.error("[v0] Contact form error:", error)
+    console.error("[Contact Form] Error:", error)
     return {
       success: false,
       message: "There was an error sending your message. Please try again.",
