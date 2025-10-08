@@ -15,7 +15,7 @@ export function ResumeButton({ variant = "default", size = "default", className 
     // Create a link element and trigger download
     const link = document.createElement("a")
     link.href = "/docs/resume.pdf"
-    link.download = "Justin_Oyugi_Mogire_Resume.pdf"
+    link.download = "Anab_Dube_Resume.pdf"
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
