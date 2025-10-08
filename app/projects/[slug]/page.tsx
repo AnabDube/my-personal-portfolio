@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation"
 import Link from "next/link"
+import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -41,7 +42,13 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
         {/* Project Image */}
         <div className="mb-8 overflow-hidden rounded-lg">
-          <img src={project.image || "/placeholder.svg"} alt={project.title} className="h-full w-full object-cover" />
+          <Image
+            src={project.image || "/placeholder.svg"}
+            alt={project.title}
+            width={800}
+            height={400}
+            className="h-full w-full object-cover"
+          />
         </div>
 
         {/* Action Buttons */}

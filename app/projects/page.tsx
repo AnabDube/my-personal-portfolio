@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
@@ -73,9 +74,11 @@ export default function ProjectsPage() {
               {featuredProjects.map((project) => (
                 <Card key={project.id} className="group overflow-hidden hover:shadow-lg transition-shadow">
                   <div className="aspect-video overflow-hidden">
-                    <img
+                    <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
+                      width={600}
+                      height={400}
                       className="h-full w-full object-cover transition-transform group-hover:scale-105"
                     />
                   </div>
@@ -129,9 +132,11 @@ export default function ProjectsPage() {
               {otherProjects.map((project) => (
                 <Card key={project.id} className="group hover:shadow-lg transition-shadow">
                   <div className="aspect-video overflow-hidden">
-                    <img
+                    <Image
                       src={project.image || "/placeholder.svg"}
                       alt={project.title}
+                      width={400}
+                      height={300}
                       className="h-full w-full object-cover transition-transform group-hover:scale-105"
                     />
                   </div>
