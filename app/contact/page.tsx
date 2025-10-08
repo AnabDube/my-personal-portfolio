@@ -3,6 +3,7 @@ import { Mail, Phone, MapPin, Send } from "lucide-react"
 import { ContactForm } from "@/components/contact-form"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { personalInfo } from "@/app/data/skills"
 
 export const metadata: Metadata = {
   title: "Contact - Anab Ali Dube",
@@ -10,24 +11,23 @@ export const metadata: Metadata = {
     "Get in touch with Anab Ali Dube for data analysis, AI projects, and research collaborations.",
 }
 
-
 const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "jmogire93@gmail.com",
-    href: "mailto:jmogire93@gmail.com",
+    value: personalInfo.email,
+    href: `mailto:${personalInfo.email}`,
   },
   {
     icon: Phone,
     label: "Phone",
-    value: "+254705071332",
-    href: "tel:+254705071332",
+    value: personalInfo.phone,
+    href: `tel:${personalInfo.phone}`,
   },
   {
     icon: MapPin,
     label: "Location",
-    value: "Available for Remote Work",
+    value: personalInfo.location,
     href: null,
   },
 ]
@@ -42,12 +42,13 @@ export default function ContactPage() {
             Let's Work Together
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto px-4 leading-relaxed">
-  As a Data Analyst and AI enthusiast, I'm passionate about transforming data into actionable insights.
-  I'm open to collaborations on data analysis projects, AI initiatives, and research opportunities.
-  Whether you have a specific project in mind or just want to discuss possibilities, I'd love to hear from you!
-</p>
-<div>
-<div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
+            As a Data Analyst and AI enthusiast, I'm passionate about transforming data into actionable insights.
+            I'm open to collaborations on data analysis projects, AI initiatives, and research opportunities.
+            Whether you have a specific project in mind or just want to discuss possibilities, I'd love to hear from you!
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
           {/* Contact Information */}
           <div className="space-y-6 sm:space-y-8">
             <div>
@@ -96,23 +97,23 @@ export default function ContactPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex items-center justify-between">
-  <span className="text-sm text-muted-foreground">Data Analysis Projects</span>
-  <span className="text-sm font-medium text-green-600">Open</span>
-</div>
-<div className="flex items-center justify-between">
-  <span className="text-sm text-muted-foreground">AI & Automation Projects</span>
-  <span className="text-sm font-medium text-green-600">Open</span>
-</div>
-<div className="flex items-center justify-between">
-  <span className="text-sm text-muted-foreground">Research Collaborations</span>
-  <span className="text-sm font-medium text-green-600">Open</span>
-</div>
-
-</div>
-  </CardContent>
-  </Card>
-  </div>
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Data Analysis Projects</span>
+                    <span className="text-sm font-medium text-green-600">Open</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">AI & Automation Projects</span>
+                    <span className="text-sm font-medium text-green-600">Open</span>
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-sm text-muted-foreground">Research Collaborations</span>
+                    <span className="text-sm font-medium text-green-600">Open</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
 
           {/* Contact Form */}
           <div>
@@ -134,23 +135,22 @@ export default function ContactPage() {
         </div>
 
         {/* Call to Action */}
-<div className="mt-12 sm:mt-16 text-center">
-  <div className="bg-accent/5 rounded-2xl p-6 sm:p-8">
-    <h3 className="font-serif text-xl sm:text-2xl font-semibold text-foreground mb-3 sm:mb-4 leading-tight">
-      Let’s Collaborate on Your Next Data Project
-    </h3>
-    <p className="text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto px-4 leading-relaxed text-sm sm:text-base">
-      Whether it’s building insightful dashboards, cleaning and analyzing datasets, or exploring AI-driven solutions — 
-      I’m excited to help you turn data into decisions. Let’s create something impactful together.
-    </p>
-    <Button size="lg" className="bg-accent hover:bg-accent/90 w-full sm:w-auto">
-      <Mail className="mr-2 h-4 w-4" />
-      Get in Touch
-    </Button>
-  </div>
-</div>
+        <div className="mt-12 sm:mt-16 text-center">
+          <div className="bg-accent/5 rounded-2xl p-6 sm:p-8">
+            <h3 className="font-serif text-xl sm:text-2xl font-semibold text-foreground mb-3 sm:mb-4 leading-tight">
+              Let's Collaborate on Your Next Data Project
+            </h3>
+            <p className="text-muted-foreground mb-4 sm:mb-6 max-w-2xl mx-auto px-4 leading-relaxed text-sm sm:text-base">
+              Whether it's building insightful dashboards, cleaning and analyzing datasets, or exploring AI-driven solutions —
+              I'm excited to help you turn data into decisions. Let's create something impactful together.
+            </p>
+            <Button size="lg" className="bg-accent hover:bg-accent/90 w-full sm:w-auto">
+              <Mail className="mr-2 h-4 w-4" />
+              Get in Touch
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
-
   )
 }

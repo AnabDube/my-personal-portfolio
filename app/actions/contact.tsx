@@ -5,10 +5,8 @@ interface ContactFormData {
   email: string
   company: string
   projectType: string
-  budget: string
   timeline: string
   message: string
-  newsletter: boolean
 }
 
 interface ContactFormResult {
@@ -43,7 +41,6 @@ export async function submitContactForm(data: ContactFormData): Promise<ContactF
       projectType: data.projectType,
       timeline: data.timeline,
       message: data.message.substring(0, 100) + "...",
-      newsletter: data.newsletter,
       timestamp: new Date().toISOString(),
     })
 
@@ -60,22 +57,20 @@ export async function submitContactForm(data: ContactFormData): Promise<ContactF
     /*
     import { Resend } from 'resend'
     const resend = new Resend(process.env.RESEND_API_KEY)
-    
+
     await resend.emails.send({
-  from: 'anabdube030@gmail.com',
-  to: 'anabdube030@gmail.com',
       from: 'Contact Form <anabdube030@gmail.com>',
+      to: 'anabdube030@gmail.com',
       subject: `New Contact Form Submission from ${data.name}`,
       html: `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${data.name}</p>
         <p><strong>Email:</strong> ${data.email}</p>
-        <p><strong>Company:</strong> ${data.company}</p>
+        <p><strong>Company:</strong> ${data.company || 'Not specified'}</p>
         <p><strong>Project Type:</strong> ${data.projectType}</p>
-        <p><strong>Timeline:</strong> ${data.timeline}</p>
+        <p><strong>Timeline:</strong> ${data.timeline || 'Not specified'}</p>
         <p><strong>Message:</strong></p>
         <p>${data.message}</p>
-        <p><strong>Newsletter:</strong> ${data.newsletter ? 'Yes' : 'No'}</p>
       `
     })
     */

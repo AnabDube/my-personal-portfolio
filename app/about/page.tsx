@@ -2,12 +2,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { ResumeButton } from "@/components/resume-button"
-import { GraduationCap, Award, Target, Heart } from "lucide-react"
+import { GraduationCap, Award, Target, Heart, MapPin, Mail, Phone, Briefcase } from "lucide-react"
 import Link from "next/link"
+import { personalInfo, skillCategories } from "@/app/data/skills"
 
 const education = [
   {
-    degree: "Bachelor of Science in Applied Statistics",
+    degree: "Bachelor of Science in Statistics",
     institution: "University of Eldoret",
     period: "2019 - 2023",
     description:
@@ -33,39 +34,37 @@ const values = [
     icon: Award,
     title: "Growth & Innovation",
     description:
-      "I’m dedicated to continuous learning — expanding my expertise in data science, AI, and visualization to deliver fresh, evidence-based solutions.",
+      "I'm dedicated to continuous learning — expanding my expertise in data science, AI, and visualization to deliver fresh, evidence-based solutions.",
   },
 ];
 
-
-const technicalSkills = [
-  { 
-    category: "Data Analysis & Statistics", 
-    skills: ["R", "SPSS", "STATA", "Excel (Advanced Formulas, Pivot Tables)", "SQL"] 
+const personalDetails = [
+  {
+    icon: MapPin,
+    label: "Location",
+    value: personalInfo.location,
   },
-  { 
-    category: "Data Visualization", 
-    skills: ["Power BI", "Excel Dashboards", "R (ggplot2, plotly)", "Google Sheets"] 
+  {
+    icon: Mail,
+    label: "Email",
+    value: personalInfo.email,
   },
-  { 
-    category: "AI & Machine Learning", 
-    skills: ["Generative AI Tools", "OpenAI APIs", "Machine Learning Basics", "Prompt Engineering"] 
+  {
+    icon: Phone,
+    label: "Phone",
+    value: personalInfo.phone,
   },
-  { 
-    category: "Research & Data Collection", 
-    skills: ["Survey Design (KII, FGD)", "Google Forms", "SurveyToGo", "NVivo"] 
+  {
+    icon: GraduationCap,
+    label: "Education",
+    value: personalInfo.education,
   },
-  { 
-    category: "Programming & Automation", 
-    skills: ["Python (Pandas, NumPy)", "R Scripts", "SQL Queries", "Power Query"] 
+  {
+    icon: Briefcase,
+    label: "Availability",
+    value: personalInfo.availability,
   },
-  { 
-    category: "Tools & Collaboration", 
-    skills: ["GitHub", "Google Workspace", "Notion", "Trello"] 
-  }
 ];
-const aiPlatforms = [{ name: "Google AI Platform"] },
-]
 
 export default function AboutPage() {
   return (
@@ -95,9 +94,6 @@ export default function AboutPage() {
               <p className="text-muted-foreground leading-relaxed">
                 I combine an analytical mindset with strong communication and research skills, helping teams translate complex data into decisions. Alongside my statistical background, I apply AI and data visualization techniques to uncover patterns and deliver insights that drive meaningful outcomes.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
-  I combine an analytical mindset with strong communication and research skills, helping teams translate complex data into decisions. Alongside my statistical background, I apply AI and data visualization techniques to uncover patterns and deliver insights that drive meaningful outcomes.
-</p>
 
             </CardContent>
           </Card>
@@ -135,7 +131,7 @@ export default function AboutPage() {
         <section className="mb-16">
           <h2 className="mb-8 font-serif text-3xl font-bold text-primary">Technical Expertise</h2>
           <div className="grid gap-6 md:grid-cols-2">
-            {technicalSkills.map((skillGroup) => (
+            {skillCategories.map((skillGroup) => (
               <Card key={skillGroup.category}>
                 <CardHeader>
                   <CardTitle className="text-lg">{skillGroup.category}</CardTitle>
@@ -143,8 +139,8 @@ export default function AboutPage() {
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
                     {skillGroup.skills.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="text-xs">
-                        {skill}
+                      <Badge key={skill.name} variant="secondary" className="text-xs">
+                        {skill.name}
                       </Badge>
                     ))}
                   </div>

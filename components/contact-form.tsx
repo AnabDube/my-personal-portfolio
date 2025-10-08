@@ -23,12 +23,12 @@ const projectTypes = [
   { value: "other", label: "Other" },
 ]
 
-const budgetRanges = [
-  { value: "under-5k", label: "Under $5,000" },
-  { value: "5k-15k", label: "$5,000 - $15,000" },
-  { value: "15k-50k", label: "$15,000 - $50,000" },
-  { value: "50k-plus", label: "$50,000+" },
-  { value: "discuss", label: "Let's Discuss" },
+const timelines = [
+  { value: "asap", label: "ASAP" },
+  { value: "1-month", label: "Within 1 month" },
+  { value: "3-months", label: "Within 3 months" },
+  { value: "6-months", label: "Within 6 months" },
+  { value: "flexible", label: "Flexible timeline" },
 ]
 
 export function ContactForm() {
@@ -137,48 +137,36 @@ export function ContactForm() {
       </div>
 
       {/* Project Details */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="space-y-2">
-          <Label htmlFor="projectType">Project Type *</Label>
-          <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
-            <SelectTrigger>
-              <SelectValue placeholder="Select project type" />
-            </SelectTrigger>
-            <SelectContent>
-              {projectTypes.map((type) => (
-                <SelectItem key={type.value} value={type.value}>
-                  {type.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-        <div className="space-y-2">
-          <Label htmlFor="budget">Budget Range</Label>
-          <Select value={formData.budget} onValueChange={(value) => handleInputChange("budget", value)}>
-            <SelectTrigger>
-              <SelectValue placeholder="Select budget range" />
-            </SelectTrigger>
-            <SelectContent>
-              {budgetRanges.map((range) => (
-                <SelectItem key={range.value} value={range.value}>
-                  {range.label}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
+      <div className="space-y-2">
+        <Label htmlFor="projectType">Project Type *</Label>
+        <Select value={formData.projectType} onValueChange={(value) => handleInputChange("projectType", value)}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select project type" />
+          </SelectTrigger>
+          <SelectContent>
+            {projectTypes.map((type) => (
+              <SelectItem key={type.value} value={type.value}>
+                {type.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="space-y-2">
         <Label htmlFor="timeline">Project Timeline</Label>
-        <Input
-          id="timeline"
-          type="text"
-          value={formData.timeline}
-          onChange={(e) => handleInputChange("timeline", e.target.value)}
-          placeholder="e.g., 2-3 months, ASAP, flexible"
-        />
+        <Select value={formData.timeline} onValueChange={(value) => handleInputChange("timeline", value)}>
+          <SelectTrigger>
+            <SelectValue placeholder="Select project timeline" />
+          </SelectTrigger>
+          <SelectContent>
+            {timelines.map((timeline) => (
+              <SelectItem key={timeline.value} value={timeline.value}>
+                {timeline.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
       <div className="space-y-2">
@@ -193,17 +181,7 @@ export function ContactForm() {
         />
       </div>
 
-      {/* Newsletter Signup */}
-      <div className="flex items-center space-x-2">
-        <Checkbox
-          id="newsletter"
-          checked={formData.newsletter}
-          onCheckedChange={(checked) => handleInputChange("newsletter", checked as boolean)}
-        />
-        <Label htmlFor="newsletter" className="text-sm text-muted-foreground">
-          Subscribe to my newsletter for data science insights and project updates
-        </Label>
-      </div>
+      {/* Newsletter signup removed as requested */}
 
       {/* Submit Button */}
       <Button

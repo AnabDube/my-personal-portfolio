@@ -8,12 +8,12 @@ export function Footer() {
         <div className="grid gap-8 md:grid-cols-3">
           {/* Brand */}
           <div className="space-y-3">
-            <h3 className="font-serif text-lg font-semibold text-primary">Justin Oyugi Mogire</h3>
+            <h3 className="font-serif text-lg font-semibold text-primary">Anab Ali Dube</h3>
             <p className="text-sm text-muted-foreground">
-              Data Analyst | AI Researcher | Biostatistician
+              Data Analyst | AI Researcher | Insight Storyteller
             </p>
             <p className="text-sm text-muted-foreground">
-              Turning data into decisions through AI, statistics, and visualization.
+              I turn raw data into actionable insights through AI, analytics, and visualization.
             </p>
           </div>
 
@@ -41,21 +41,21 @@ export function Footer() {
             <h4 className="font-medium text-primary">Get in Touch</h4>
             <div className="space-y-2 text-sm">
               <a
-                href="mailto:jmogire93@gmail.com"
+                href="mailto:anabdube030@gmail.com"
                 className="flex items-center space-x-2 text-muted-foreground hover:text-accent transition-colors"
               >
                 <Mail className="h-4 w-4" />
-                <span>jmogire93@gmail.com</span>
+                <span>anabdube030@gmail.com</span>
               </a>
               <a
-                href="tel:+254705071332"
+                href="tel:+254757078420"
                 className="flex items-center space-x-2 text-muted-foreground hover:text-accent transition-colors"
               >
                 <Phone className="h-4 w-4" />
-                <span>+254 705 071 332</span>
+                <span>+254 757 078 420</span>
               </a>
               <a
-                href="https://linkedin.com/in/justin-oyugi-449279221"
+                href="https://www.linkedin.com/in/anabdube/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center space-x-2 text-muted-foreground hover:text-accent transition-colors"
@@ -68,7 +68,7 @@ export function Footer() {
         </div>
 
         <div className="mt-8 pt-6 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Justin Oyugi Mogire. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Anab Ali Dube. All rights reserved.</p>
         </div>
       </div>
     </footer>

@@ -284,4 +284,37 @@
   .bg-grid-pattern {
     background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
   }
+
+  /* Grid patterns for data visualization background */
+  .bg-grid-slate-100 {
+    background-image:
+      linear-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+  }
+
+  .bg-grid-slate-700\/25 {
+    background-image:
+      linear-gradient(rgba(71, 85, 105, 0.25) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(71, 85, 105, 0.25) 1px, transparent 1px);
+  }
+
+  .bg-grid-slate-50 {
+    background-image:
+      linear-gradient(rgba(248, 250, 252, 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(248, 250, 252, 0.5) 1px, transparent 1px);
+  }
+
+  .bg-grid-slate-800\/20 {
+    background-image:
+      linear-gradient(rgba(30, 41, 59, 0.2) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(30, 41, 59, 0.2) 1px, transparent 1px);
+  }
+
+  /* Custom animation delays for data points */
+  .animate-delay-500 { animation-delay: 0.5s; }
+  .animate-delay-1000 { animation-delay: 1s; }
+  .animate-delay-1500 { animation-delay: 1.5s; }
+  .animate-delay-2000 { animation-delay: 2s; }
+  .animate-delay-2500 { animation-delay: 2.5s; }
+  .animate-delay-3000 { animation-delay: 3s; }
 }

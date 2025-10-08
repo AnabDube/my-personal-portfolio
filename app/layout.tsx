@@ -19,24 +19,24 @@ const manrope = Manrope({
 })
 
 export const metadata: Metadata = {
-  title: "Justin O. Mogire - Data Analyst & AI Researcher",
+  title: "Anab Ali Dube - Data Analyst & AI Researcher",
   description:
-    "Turning data into decisions through AI, statistics, and visualization. Portfolio of Justin O. Mogire, Data Analyst, AI Researcher, and Biostatistics Graduate Student.",
-  keywords: ["Data Analyst", "AI Researcher", "Biostatistics", "Machine Learning", "Data Visualization", "Python", "R"],
-  authors: [{ name: "Justin O. Mogire" }],
-  creator: "Justin O. Mogire",
+    "I turn raw data into actionable insights through AI, analytics, and visualization. Portfolio of Anab Ali Dube, Data Analyst and AI Researcher specializing in Excel, Power BI, Python, SQL, and AI.",
+  keywords: ["Data Analyst", "AI Researcher", "Excel", "Power BI", "Python", "SQL", "Data Visualization", "Machine Learning", "Statistics"],
+  authors: [{ name: "Anab Ali Dube" }],
+  creator: "Anab Ali Dube",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://justinmogire.vercel.app",
-    title: "Justin O. Mogire - Data Analyst & AI Researcher",
-    description: "Turning data into decisions through AI, statistics, and visualization.",
-    siteName: "Justin Oyugi Mogire Portfolio",
+    url: "https://anabdube.vercel.app",
+    title: "Anab Ali Dube - Data Analyst & AI Researcher",
+    description: "I turn raw data into actionable insights through AI, analytics, and visualization.",
+    siteName: "Anab Ali Dube Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Justin O. Mogire - Data Analyst & AI Researcher",
-    description: "Turning data into decisions through AI, statistics, and visualization.",
+    title: "Anab Ali Dube - Data Analyst & AI Researcher",
+    description: "I turn raw data into actionable insights through AI, analytics, and visualization.",
   },
   robots: {
     index: true,

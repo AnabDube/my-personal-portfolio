@@ -18,100 +18,41 @@ import {
   Lightbulb,
   Heart,
   Zap,
+  FileSpreadsheet,
+  Search,
+  Handshake,
+  CheckSquare,
+  Bot,
+  Languages,
+  Sparkles,
+  Microchip,
+  MessageCircle,
 } from "lucide-react"
+import { skillCategories } from "@/app/data/skills"
 
-const skillCategories = [
-  {
-    title: "Machine Learning & AI",
-    icon: Brain,
-    description: "Advanced ML algorithms, deep learning, and AI model development",
-    skills: [
-      { name: "TensorFlow", level: 90, description: "Deep learning model development and deployment" },
-      { name: "PyTorch", level: 85, description: "Neural network research and experimentation" },
-      { name: "scikit-learn", level: 95, description: "Classical ML algorithms and preprocessing" },
-      { name: "Keras", level: 88, description: "High-level neural network API" },
-      {
-        name: "LLM Prompt Engineering",
-        level: 92,
-        description: "Optimizing large language model interactions",
-        featured: true,
-      },
-      { name: "Agentic AI Design", level: 87, description: "Building autonomous AI agent systems", featured: true },
-      { name: "Supervised Learning", level: 93, description: "Classification and regression techniques" },
-      {
-        name: "Unsupervised Learning",
-        level: 89,
-        description: "Clustering, dimensionality reduction, anomaly detection",
-      },
-    ],
-  },
-  {
-    title: "Data Analytics & Statistics",
-    icon: BarChart3,
-    description: "Statistical analysis, biostatistics, and data interpretation",
-    skills: [
-      { name: "Python", level: 94, description: "Primary language for data analysis and ML" },
-      { name: "R", level: 91, description: "Statistical computing and biostatistics" },
-      { name: "SPSS", level: 88, description: "Statistical analysis and hypothesis testing" },
-      { name: "Advanced Excel", level: 85, description: "Complex data analysis and modeling" },
-      { name: "Biostatistics", level: 90, description: "Statistical methods for biological data" },
-      { name: "Clinical Trial Analysis", level: 87, description: "Statistical analysis for medical research" },
-      { name: "Survival Analysis", level: 89, description: "Time-to-event statistical modeling" },
-    ],
-  },
-  {
-    title: "Data Visualization & BI",
-    icon: Database,
-    description: "Creating compelling visualizations and business intelligence solutions",
-    skills: [
-      { name: "Power BI", level: 92, description: "Interactive dashboards and business reporting" },
-      { name: "matplotlib", level: 89, description: "Python plotting and statistical graphics" },
-      { name: "seaborn", level: 87, description: "Statistical data visualization in Python" },
-      { name: "ggplot2", level: 85, description: "Grammar of graphics in R" },
-      { name: "Plotly", level: 83, description: "Interactive web-based visualizations" },
-      { name: "Tableau", level: 80, description: "Business intelligence and data visualization" },
-    ],
-  },
-  {
-    title: "Programming & Development",
-    icon: Code,
-    description: "Software development and programming languages",
-    skills: [
-      { name: "Python", level: 94, description: "Primary programming language" },
-      { name: "R", level: 91, description: "Statistical programming and analysis" },
-      { name: "SQL", level: 88, description: "Database querying and management" },
-      { name: "JavaScript", level: 75, description: "Web development and data visualization" },
-      { name: "Git", level: 85, description: "Version control and collaboration" },
-      { name: "Docker", level: 78, description: "Containerization and deployment" },
-    ],
-  },
-  {
-    title: "AI & NLP Technologies",
-    icon: Cpu,
-    description: "Natural language processing and AI platform integration",
-    skills: [
-      { name: "NLP & Data Annotation", level: 90, description: "Text processing and linguistic annotation" },
-      { name: "OpenAI APIs", level: 88, description: "GPT integration and prompt engineering" },
-      { name: "Google AI Platform", level: 85, description: "Cloud-based ML model deployment" },
-      { name: "Hugging Face", level: 83, description: "Transformer models and NLP pipelines" },
-      { name: "NLTK", level: 87, description: "Natural language toolkit for Python" },
-      { name: "spaCy", level: 85, description: "Industrial-strength NLP library" },
-    ],
-  },
-  {
-    title: "Data Management & Tools",
-    icon: Globe,
-    description: "Large dataset management and project coordination",
-    skills: [
-      { name: "Large Dataset Management", level: 91, description: "Handling and processing big data efficiently" },
-      { name: "PostgreSQL", level: 84, description: "Relational database management" },
-      { name: "MongoDB", level: 78, description: "NoSQL database for unstructured data" },
-      { name: "Jira", level: 82, description: "Project management and issue tracking" },
-      { name: "AWS", level: 79, description: "Cloud computing and data storage" },
-      { name: "Apache Spark", level: 76, description: "Big data processing framework" },
-    ],
-  },
-]
+// Icon mapping function
+const getIcon = (iconName: string) => {
+  const iconMap: { [key: string]: any } = {
+    "chart-line": BarChart3,
+    "brain": Brain,
+    "search": Search,
+    "file-excel": FileSpreadsheet,
+    "python": Code,
+    "database": Database,
+    "r-project": Code,
+    "chart-bar": BarChart3,
+    "robot": Bot,
+    "language": Languages,
+    "magic": Sparkles,
+    "cogs": Cpu,
+    "microchip": Microchip,
+    "comments": MessageCircle,
+    "lightbulb": Lightbulb,
+    "handshake": Handshake,
+    "tasks": CheckSquare,
+  }
+  return iconMap[iconName] || Code
+}
 
 const softSkills = [
   {
@@ -196,18 +137,21 @@ export default function SkillsPage() {
 
           {/* Category Navigation */}
           <div className="mb-8 flex flex-wrap gap-2">
-            {skillCategories.map((category, index) => (
-              <Button
-                key={category.title}
-                variant={selectedCategory === index ? "default" : "outline"}
-                size="sm"
-                onClick={() => setSelectedCategory(index)}
-                className="gap-2"
-              >
-                <category.icon className="h-4 w-4" />
-                {category.title}
-              </Button>
-            ))}
+            {skillCategories.map((category, index) => {
+              const IconComponent = getIcon(category.icon)
+              return (
+                <Button
+                  key={category.category}
+                  variant={selectedCategory === index ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedCategory(index)}
+                  className="gap-2"
+                >
+                  <IconComponent className="h-4 w-4" />
+                  {category.category}
+                </Button>
+              )
+            })}
           </div>
 
           {/* Selected Category Skills */}
@@ -215,11 +159,11 @@ export default function SkillsPage() {
             <CardHeader>
               <div className="flex items-center gap-3">
                 <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
-                  {React.createElement(skillCategories[selectedCategory].icon, { className: "h-5 w-5" })}
+                  {React.createElement(getIcon(skillCategories[selectedCategory].icon), { className: "h-5 w-5" })}
                 </div>
                 <div>
-                  <CardTitle>{skillCategories[selectedCategory].title}</CardTitle>
-                  <CardDescription>{skillCategories[selectedCategory].description}</CardDescription>
+                  <CardTitle>{skillCategories[selectedCategory].category}</CardTitle>
+                  <CardDescription>{skillCategories[selectedCategory].description || "Technical skills and expertise"}</CardDescription>
                 </div>
               </div>
             </CardHeader>

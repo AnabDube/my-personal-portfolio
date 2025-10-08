@@ -28,7 +28,7 @@ export function Header() {
       <div className="container flex h-14 sm:h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center space-x-2 min-w-0">
           <span className="font-serif text-base sm:text-lg md:text-xl font-bold text-primary truncate">
-            Justin Mogire
+            Anab Dube
           </span>
         </Link>
 

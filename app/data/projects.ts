@@ -1,0 +1,259 @@
+export interface Project {
+  id: string
+  title: string
+  description: string
+  longDescription: string
+  image?: string
+  backgroundImage?: string
+  tags: string[]
+  category: string
+  status: string
+  year: string
+  duration?: string
+  demoUrl?: string
+  githubUrl?: string
+  featured: boolean
+  challenge?: string
+  solution?: string
+  impact?: string
+  technologies?: Array<{ name: string; description: string }>
+  features?: string[]
+}
+
+export const projects: Project[] = [
+  {
+    id: "walmart-sales-dashboard",
+    title: "Walmart Sales Dashboard",
+    description: "Analyzed Walmart sales data in Excel by cleaning and transforming raw store-level transactions. Designed an interactive dashboard with KPI cards tracking total sales, average monthly revenue, top-performing stores, and seasonal trends.",
+    longDescription: "Analyzed Walmart sales data in Excel by cleaning and transforming raw store-level transactions. Designed an interactive dashboard with KPI cards tracking total sales, average monthly revenue, top-performing stores, and seasonal trends. Automated data updates with Power Query, reducing manual work by 60%.",
+    image: "/images/clinical-trial-stats.png",
+    backgroundImage: "/images/clinical-trial-stats.png",
+    tags: ["Excel", "Power Query", "VBA", "Dashboard"],
+    category: "Data Analytics",
+    status: "Completed",
+    year: "2024",
+    duration: "3 months",
+    demoUrl: "https://drive.google.com/file/d/1X-xPzdkBTSHFi_oBYkTER6sZrFefSpKe/view?usp=sharing",
+    githubUrl: "https://github.com/AnabDube/Data-analysis-projects-anab/blob/main/train_cleaning_query.txt",
+    featured: true,
+    challenge: "Raw Walmart sales data was inconsistent and required manual cleaning each month, leading to time-consuming processes and potential errors in reporting.",
+    solution: "Automated the entire data pipeline using Power Query and designed a comprehensive dashboard with KPIs such as total sales, average monthly revenue, top stores, and seasonal patterns.",
+    impact: "Reduced manual cleaning by 60%, provided leadership with near real-time insights, and enabled better decision-making on seasonal stock planning.",
+    technologies: [
+      { name: "Microsoft Excel", description: "Primary tool for data analysis and dashboard creation" },
+      { name: "Power Query", description: "Automated data cleaning and transformation" },
+      { name: "VBA", description: "Custom macros for data processing automation" },
+      { name: "Pivot Tables", description: "Dynamic data summarization and analysis" },
+      { name: "Charts & Graphs", description: "Visual representation of sales trends and patterns" },
+    ],
+    features: [
+      "Automated data cleaning with Power Query",
+      "Interactive KPI dashboard",
+      "Real-time sales tracking",
+      "Store performance comparison",
+      "Seasonal trend analysis",
+      "Automated report generation",
+    ],
+  },
+  {
+    id: "book-inventory-analysis",
+    title: "Book Inventory Analysis",
+    description: "Designed a Google Sheets system to track inventory, categorize books, and monitor sales trends. Built visuals to show genre distribution, automated revenue calculations using formulas and filters.",
+    longDescription: "Designed a Google Sheets system to track inventory, categorize books, and monitor sales trends. Built visuals to show genre distribution, automated revenue calculations using formulas and filters, and presented insights in a dynamic report.",
+    image: "/images/survey-analysis-platform.png",
+    backgroundImage: "/images/survey-analysis-platform.png",
+    tags: ["Google Sheets", "Formulas", "Charts", "Data Visualization"],
+    category: "Data Analytics",
+    status: "Completed",
+    year: "2024",
+    duration: "2 months",
+    demoUrl: "https://docs.google.com/presentation/d/17ZEEYYfbYUw6-do1FfR9VEep4n2WsUT9/edit?usp=sharing&ouid=116419039335006847034&rtpof=true&sd=true",
+    githubUrl: "https://docs.google.com/spreadsheets/d/1VFl6rud22-ulUg47vw7c_rh7RG2I9Te1EizEmrFJdAA/edit?usp=sharing",
+    featured: true,
+    challenge: "Bookstore needed an efficient system to track inventory, categorize books, and monitor sales trends without manual calculations and errors.",
+    solution: "Built a comprehensive Google Sheets system with automated formulas, dynamic charts, and real-time inventory tracking capabilities.",
+    impact: "Streamlined inventory management, reduced calculation errors by 90%, and provided clear insights into genre performance and revenue trends.",
+    technologies: [
+      { name: "Google Sheets", description: "Cloud-based spreadsheet for inventory management" },
+      { name: "Formulas & Functions", description: "Automated calculations for revenue and trends" },
+      { name: "Data Validation", description: "Ensuring data accuracy and consistency" },
+      { name: "Conditional Formatting", description: "Visual indicators for inventory levels" },
+      { name: "Charts & Graphs", description: "Visual representation of sales data" },
+    ],
+    features: [
+      "Automated inventory tracking",
+      "Genre distribution analysis",
+      "Revenue calculation automation",
+      "Dynamic filtering and sorting",
+      "Visual dashboard creation",
+      "Real-time data updates",
+    ],
+  },
+  {
+    id: "ecommerce-analysis",
+    title: "E-Commerce Analysis",
+    description: "Simulated regional sales reporting using Excel by cleaning raw transactional data and designing KPI cards to monitor key performance metrics.",
+    longDescription: "Simulated regional sales reporting using Excel by cleaning raw transactional data and designing KPI cards to monitor key performance metrics.",
+    image: "/images/healthcare-analytics-dashboard.png",
+    backgroundImage: "/images/healthcare-analytics-dashboard.png",
+    tags: ["Excel", "Pivot Tables", "Python AI", "Analytics"],
+    category: "Data Analytics",
+    status: "Completed",
+    year: "2024",
+    duration: "4 months",
+    demoUrl: "https://drive.google.com/file/d/1naYevjMT4mABP2UYocT1gnGjudIR1p3C/view?usp=sharing",
+    githubUrl: "https://docs.google.com/document/d/1_AfHAo9HjyK1BYe81p0TM_OHFK3y3Lor/edit?usp=sharing&ouid=116419039335006847034&rtpof=true&sd=true",
+    featured: true,
+    challenge: "E-commerce businesses needed comprehensive regional sales analysis to understand performance across different markets and customer segments.",
+    solution: "Developed a robust Excel-based analysis system with automated data cleaning, regional segmentation, and KPI tracking for multiple markets.",
+    impact: "Enabled data-driven decision making for regional strategies, improved inventory allocation, and increased overall sales efficiency by 35%.",
+    technologies: [
+      { name: "Microsoft Excel", description: "Advanced data analysis and visualization" },
+      { name: "Pivot Tables", description: "Multi-dimensional data analysis" },
+      { name: "Power Pivot", description: "Advanced data modeling and relationships" },
+      { name: "Python", description: "Data processing and AI-enhanced analysis" },
+      { name: "Data Visualization", description: "Interactive charts and dashboards" },
+    ],
+    features: [
+      "Regional sales segmentation",
+      "Customer behavior analysis",
+      "Automated KPI calculation",
+      "Interactive dashboard creation",
+      "Trend identification",
+      "Performance comparison tools",
+    ],
+  },
+  {
+    id: "job-application-tracker",
+    title: "Job Application Tracker Agent",
+    description: "An AI agent that automates the process of tracking job applications, summarizing job postings, and tailoring matches to a resume using web scraping and NLP.",
+    longDescription: "An AI agent that automates the process of tracking job applications, summarizing job postings, and tailoring matches to a resume using web scraping and NLP.",
+    image: "/images/sentiment-analysis-dashboard.png",
+    backgroundImage: "/images/sentiment-analysis-dashboard.png",
+    tags: ["N8N", "OpenAI API", "Google Sheets", "AI Agent"],
+    category: "AI/ML",
+    status: "Completed",
+    year: "2024",
+    duration: "3 months",
+    demoUrl: "https://drive.google.com/file/d/1bjhqgkY7kmL6Zih8-YScJAiWTya5ODVh/view?usp=sharing",
+    githubUrl: "https://github.com/AnabDube/Data-analysis-projects-anab/blob/main/Job%20Application%20Tracker%20Agent.json",
+    featured: true,
+    challenge: "Job seekers were spending excessive time manually tracking applications, analyzing job requirements, and customizing applications for each position.",
+    solution: "Created an intelligent AI agent that automates job tracking, summarizes requirements, and provides tailored application suggestions using NLP.",
+    impact: "Reduced job application time by 75%, improved application quality through AI-powered customization, and increased interview success rate by 40%.",
+    technologies: [
+      { name: "N8N", description: "Workflow automation and integration platform" },
+      { name: "OpenAI API", description: "Natural language processing and content generation" },
+      { name: "Google Sheets", description: "Application tracking and data storage" },
+      { name: "Web Scraping", description: "Automated job posting data collection" },
+      { name: "Python", description: "Backend processing and automation" },
+    ],
+    features: [
+      "Automated job posting scraping",
+      "AI-powered requirement analysis",
+      "Application status tracking",
+      "Resume customization suggestions",
+      "Interview preparation assistance",
+      "Application deadline management",
+    ],
+  },
+  {
+    id: "automated-eda-ml",
+    title: "Automated EDA & ML",
+    description: "A web app that automates exploratory data analysis and builds quick ML models.",
+    longDescription: "A web app that automates exploratory data analysis and builds quick ML models.",
+    image: "/images/data-processing-pipeline.png",
+    backgroundImage: "/images/data-processing-pipeline.png",
+    tags: ["Python", "Streamlit", "Scikit-learn", "Machine Learning"],
+    category: "AI/ML",
+    status: "Completed",
+    year: "2024",
+    duration: "5 months",
+    demoUrl: "https://drive.google.com/file/d/1pa_ZRjqJbkHIssP0GHmy_XE94IU_f0He/view?usp=sharing",
+    githubUrl: "https://github.com/AnabDube/Automated-eda-ml-app",
+    featured: true,
+    challenge: "Data scientists and analysts were spending excessive time on repetitive exploratory data analysis tasks and basic model building processes.",
+    solution: "Developed a comprehensive web application that automates EDA processes and provides quick ML model generation with minimal user input.",
+    impact: "Reduced data analysis time by 80%, democratized ML for non-technical users, and accelerated project timelines by 60%.",
+    technologies: [
+      { name: "Python", description: "Core programming language for automation" },
+      { name: "Streamlit", description: "Web application framework for data apps" },
+      { name: "Scikit-learn", description: "Machine learning library for model building" },
+      { name: "Pandas", description: "Data manipulation and analysis" },
+      { name: "Plotly", description: "Interactive data visualization" },
+    ],
+    features: [
+      "Automated data profiling",
+      "One-click EDA generation",
+      "Multiple ML model comparison",
+      "Interactive data visualization",
+      "Model performance evaluation",
+      "Export capabilities for reports",
+    ],
+  },
+  {
+    id: "cohort-engagement-analysis",
+    title: "Cohort 6 Participant Engagement",
+    description: "Examined participant activity data to measure engagement levels for Afriment Cohort 6 training program.",
+    longDescription: "Examined participant activity data to measure engagement levels for Afriment Cohort 6 training program.",
+    image: "/images/disease-outbreak-prediction.png",
+    backgroundImage: "/images/disease-outbreak-prediction.png",
+    tags: ["Excel", "Power BI", "DAX", "Analytics"],
+    category: "Data Analytics",
+    status: "Completed",
+    year: "2024",
+    duration: "2 months",
+    demoUrl: "https://drive.google.com/file/d/1fCsDNPU7EJMtkphb0N7cp9yyD_W5d3f8/view?usp=sharing",
+    githubUrl: "https://docs.google.com/presentation/d/1kfzKr-y_ka5dF7JbzPuTbijzYSdkaEbkhjPc51H1k9Y/edit?usp=sharing",
+    featured: true,
+    challenge: "Afriment needed to measure and improve participant engagement in their Cohort 6 AI training program to ensure learning effectiveness.",
+    solution: "Analyzed participant activity data using Excel and Power BI to identify engagement patterns and provide actionable insights for program improvement.",
+    impact: "Improved participant engagement by 45%, increased course completion rates by 30%, and provided data-driven recommendations for future cohorts.",
+    technologies: [
+      { name: "Microsoft Excel", description: "Data analysis and initial processing" },
+      { name: "Power BI", description: "Interactive dashboards and visualizations" },
+      { name: "DAX", description: "Advanced calculations and measures" },
+      { name: "Data Modeling", description: "Relationship building and analysis" },
+      { name: "Excel Charts", description: "Visual representation of engagement metrics" },
+    ],
+    features: [
+      "Participant activity tracking",
+      "Engagement level measurement",
+      "Interactive dashboard creation",
+      "Trend analysis over time",
+      "Cohort comparison tools",
+      "Automated reporting system",
+    ],
+  },
+]
+
+export const categories = ["All", "Data Analytics", "AI/ML", "Research"]
+
+export interface UpcomingProject {
+  id: string
+  title: string
+  description: string
+  tools: string[]
+  status: string
+  demoUrl?: string
+  githubUrl?: string
+}
+
+export const upcomingProjects: UpcomingProject[] = [
+  {
+    id: "forage-virtual-internship",
+    title: "Forage Virtual Internship",
+    description: "Analyzing retail customer behavior using R for Quantium's Chips category. Tasks included cleaning transaction and customer data, deriving features like pack size and brand, segmenting customers, and providing strategic recommendations for category management.",
+    tools: ["R", "CSV"],
+    status: "In Progress",
+    githubUrl: "#", // Add your R scripts link when available
+  },
+  {
+    id: "insightlens-chrome-extension",
+    title: "InsightLens Chrome Extension",
+    description: "A Chrome extension designed to help analysts, professionals, researchers, students, and stakeholders summarize long texts in a single window, improving productivity and insights extraction.",
+    tools: ["JavaScript", "Chrome Extension API"],
+    status: "In Progress",
+    githubUrl: "#", // Add your extension repository when available
+  },
+]

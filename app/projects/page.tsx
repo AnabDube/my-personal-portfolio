@@ -7,105 +7,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ArrowRight, Search, ExternalLink, Github } from "lucide-react"
-
-const projects = [
-  {
-    id: "healthcare-analytics",
-    title: "AI-Powered Healthcare Analytics",
-    description:
-      "Machine learning models for predicting patient outcomes using biostatistical methods and large healthcare datasets.",
-    longDescription:
-      "Developed comprehensive machine learning pipeline for analyzing patient data from multiple healthcare facilities. The system predicts patient outcomes with 85% accuracy using ensemble methods combining logistic regression, random forests, and neural networks.",
-    image: "/images/healthcare-analytics-dashboard.png",
-    tags: ["Python", "TensorFlow", "Biostatistics", "Healthcare", "Machine Learning"],
-    category: "Healthcare",
-    status: "Completed",
-    year: "2024",
-    demoUrl: "#",
-    githubUrl: "#",
-    featured: true,
-  },
-  {
-    id: "sentiment-analysis",
-    title: "NLP Sentiment Analysis Dashboard",
-    description:
-      "Real-time sentiment analysis of social media data with interactive Power BI visualizations and automated reporting.",
-    longDescription:
-      "Built end-to-end sentiment analysis system processing 10,000+ social media posts daily. Features real-time dashboard with sentiment trends, keyword analysis, and automated alert system for brand monitoring.",
-    image: "/images/sentiment-analysis-dashboard.png",
-    tags: ["NLP", "Power BI", "Python", "Data Visualization", "Social Media"],
-    category: "NLP",
-    status: "Completed",
-    year: "2024",
-    demoUrl: "#",
-    githubUrl: "#",
-    featured: true,
-  },
-  {
-    id: "clinical-trials",
-    title: "Statistical Modeling for Clinical Trials",
-    description:
-      "Advanced statistical models for clinical trial data analysis with R and SPSS, focusing on treatment efficacy.",
-    longDescription:
-      "Comprehensive statistical analysis framework for Phase II and III clinical trials. Implemented survival analysis, time-to-event modeling, and adaptive trial designs with interim analysis capabilities.",
-    image: "/images/clinical-trial-stats.png",
-    tags: ["R", "SPSS", "Clinical Trials", "Statistics", "Biostatistics"],
-    category: "Research",
-    status: "Completed",
-    year: "2023",
-    demoUrl: "#",
-    githubUrl: "#",
-    featured: true,
-  },
-  {
-    id: "predictive-modeling",
-    title: "Predictive Modeling for Disease Outbreak",
-    description: "Time series forecasting models to predict disease outbreak patterns using epidemiological data.",
-    longDescription:
-      "Developed ARIMA and LSTM models for predicting disease outbreak patterns across different regions. The system provides early warning capabilities with 78% accuracy in outbreak prediction.",
-    image: "/images/disease-outbreak-prediction.png",
-    tags: ["Python", "Time Series", "Epidemiology", "LSTM", "Forecasting"],
-    category: "Healthcare",
-    status: "Completed",
-    year: "2023",
-    demoUrl: "#",
-    githubUrl: "#",
-    featured: false,
-  },
-  {
-    id: "data-pipeline",
-    title: "Automated Data Processing Pipeline",
-    description: "ETL pipeline for processing large biomedical datasets with automated quality checks and reporting.",
-    longDescription:
-      "Built scalable ETL pipeline processing 1TB+ of biomedical data monthly. Features automated data validation, quality scoring, and exception handling with comprehensive logging and monitoring.",
-    image: "/images/data-processing-pipeline.png",
-    tags: ["Python", "ETL", "Data Engineering", "Automation", "Big Data"],
-    category: "Data Engineering",
-    status: "Completed",
-    year: "2023",
-    demoUrl: "#",
-    githubUrl: "#",
-    featured: false,
-  },
-  {
-    id: "survey-analysis",
-    title: "Large-Scale Survey Analysis Platform",
-    description:
-      "Statistical analysis platform for processing and analyzing large-scale survey data with interactive visualizations.",
-    longDescription:
-      "Comprehensive survey analysis platform handling 50,000+ responses. Features advanced statistical tests, factor analysis, and interactive dashboards for stakeholder reporting.",
-    image: "/images/survey-analysis-platform.png",
-    tags: ["R", "Shiny", "Survey Analysis", "Statistics", "Visualization"],
-    category: "Research",
-    status: "In Progress",
-    year: "2024",
-    demoUrl: "#",
-    githubUrl: "#",
-    featured: false,
-  },
-]
-
-const categories = ["All", "Healthcare", "NLP", "Research", "Data Engineering"]
+import { projects, categories, upcomingProjects } from "@/app/data/projects"
 
 export default function ProjectsPage() {
   const [searchTerm, setSearchTerm] = useState("")
@@ -269,6 +171,53 @@ export default function ProjectsPage() {
             </div>
           </section>
         )}
+
+        {/* Upcoming Projects */}
+        <section className="mt-16">
+          <div className="text-center mb-8">
+            <h2 className="mb-4 font-serif text-3xl font-bold text-primary">Upcoming Projects</h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Exciting projects currently in development. Stay tuned for detailed breakdowns and results.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {upcomingProjects.map((project) => (
+              <Card key={project.id} className="group hover:shadow-lg transition-shadow border-dashed border-2 border-accent/30">
+                <CardHeader>
+                  <div className="flex items-start justify-between gap-2">
+                    <CardTitle className="text-lg group-hover:text-accent transition-colors">
+                      {project.title}
+                    </CardTitle>
+                    <Badge variant="outline" className="text-xs bg-accent/10 text-accent border-accent/30">
+                      {project.status}
+                    </Badge>
+                  </div>
+                  <CardDescription className="text-sm leading-relaxed">
+                    {project.description}
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tools.map((tool) => (
+                      <Badge key={tool} variant="secondary" className="text-xs">
+                        {tool}
+                      </Badge>
+                    ))}
+                  </div>
+                  {project.githubUrl && project.githubUrl !== "#" && (
+                    <Button asChild variant="ghost" size="sm" className="gap-2 p-0 h-auto">
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="h-4 w-4" />
+                        View Progress
+                      </a>
+                    </Button>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
 
         {/* No Results */}
         {filteredProjects.length === 0 && (
