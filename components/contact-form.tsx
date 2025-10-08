@@ -16,10 +16,10 @@ import { Alert, AlertDescription } from "@/components/ui/alert"
 const projectTypes = [
   { value: "data-analysis", label: "Data Analysis" },
   { value: "ai-research", label: "AI Research" },
-  { value: "biostatistics", label: "Biostatistics Consulting" },
+
   { value: "machine-learning", label: "Machine Learning" },
   { value: "data-visualization", label: "Data Visualization" },
-  { value: "statistical-modeling", label: "Statistical Modeling" },
+
   { value: "other", label: "Other" },
 ]
 
