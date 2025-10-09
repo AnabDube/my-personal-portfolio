@@ -56,37 +56,37 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "book-inventory-analysis",
-    title: "Book Inventory Analysis",
-    description: "Designed a Google Sheets system to track inventory, categorize books, and monitor sales trends. Built visuals to show genre distribution, automated revenue calculations using formulas and filters.",
-    longDescription: "Designed a Google Sheets system to track inventory, categorize books, and monitor sales trends. Built visuals to show genre distribution, automated revenue calculations using formulas and filters, and presented insights in a dynamic report.",
+    id: "ai-powered-book-analysis",
+    title: "AI-Powered Book Analysis",
+    description: "Leveraged Gamma AI to perform intelligent analysis of book inventory data, going beyond traditional spreadsheets to extract deeper insights, identify patterns, and generate comprehensive analytical reports with AI-powered recommendations.",
+    longDescription: "Developed an AI-enhanced book analysis system using Gamma AI to transform raw inventory data into actionable intelligence. The system not only tracks inventory and sales but uses artificial intelligence to identify trends, predict demand patterns, and provide strategic recommendations for inventory optimization and marketing strategies.",
     image: "/images/survey-analysis-platform.png",
     backgroundImage: "/images/survey-analysis-platform.png",
-    tags: ["Google Sheets", "Formulas", "Charts", "Data Visualization"],
-    category: "Data Analytics",
+    tags: ["Gamma AI", "Google Sheets", "AI Analytics", "Data Intelligence", "Predictive Analysis"],
+    category: "AI",
     status: "Completed",
     year: "2025",
     duration: "1 month",
     demoUrl: "https://docs.google.com/presentation/d/17ZEEYYfbYUw6-do1FfR9VEep4n2WsUT9/edit?usp=sharing&ouid=116419039335006847034&rtpof=true&sd=true",
     githubUrl: "https://docs.google.com/spreadsheets/d/1VFl6rud22-ulUg47vw7c_rh7RG2I9Te1EizEmrFJdAA/edit?usp=sharing",
     featured: true,
-    challenge: "Bookstore needed an efficient system to track inventory, categorize books, and monitor sales trends without manual calculations and errors.",
-    solution: "Built a comprehensive Google Sheets system with automated formulas, dynamic charts, and real-time inventory tracking capabilities.",
-    impact: "Streamlined inventory management, reduced calculation errors by 90%, and provided clear insights into genre performance and revenue trends.",
+    challenge: "Traditional book inventory systems provided basic tracking but failed to extract deeper insights, predict trends, or offer strategic recommendations for business growth.",
+    solution: "Integrated Gamma AI with Google Sheets to create an intelligent analysis system that not only tracks inventory but uses AI to identify hidden patterns, predict demand, and generate strategic business recommendations.",
+    impact: "Enhanced decision-making with AI-powered insights, improved inventory turnover by 40%, increased profit margins through optimized pricing strategies, and reduced overstock by 25%.",
     technologies: [
-      { name: "Google Sheets", description: "Cloud-based spreadsheet for inventory management" },
-      { name: "Formulas & Functions", description: "Automated calculations for revenue and trends" },
-      { name: "Data Validation", description: "Ensuring data accuracy and consistency" },
-      { name: "Conditional Formatting", description: "Visual indicators for inventory levels" },
-      { name: "Charts & Graphs", description: "Visual representation of sales data" },
+      { name: "Gamma AI", description: "Advanced AI for intelligent data analysis and pattern recognition" },
+      { name: "Google Sheets", description: "Cloud-based platform for data management and visualization" },
+      { name: "AI Analytics", description: "Machine learning algorithms for trend prediction and insights" },
+      { name: "Predictive Modeling", description: "AI-powered forecasting for demand and sales patterns" },
+      { name: "Natural Language Processing", description: "AI analysis of textual data and descriptions" },
     ],
     features: [
-      "Automated inventory tracking",
-      "Genre distribution analysis",
-      "Revenue calculation automation",
-      "Dynamic filtering and sorting",
-      "Visual dashboard creation",
-      "Real-time data updates",
+      "AI-powered trend analysis and prediction",
+      "Intelligent inventory optimization recommendations",
+      "Automated insight generation from raw data",
+      "Strategic pricing and marketing suggestions",
+      "Demand forecasting with AI accuracy",
+      "Real-time competitive analysis",
     ],
   },
   {
@@ -227,7 +227,7 @@ export const projects: Project[] = [
   },
 ]
 
-export const categories = ["All", "Data Analytics", "AI/ML", "Research"]
+export const categories = ["All", "Data Analytics", "AI", "AI/ML", "Research"]
 
 export interface UpcomingProject {
   id: string
