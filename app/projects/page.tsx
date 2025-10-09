@@ -35,8 +35,7 @@ export default function ProjectsPage() {
         <div className="text-center mb-12">
           <h1 className="mb-4 font-serif text-4xl font-bold text-primary">Projects</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore my portfolio of data science projects spanning healthcare analytics, machine learning, and
-            statistical research.
+            Explore my portfolio of projects across data analytics, machine learning, and AI automation.
           </p>
         </div>
 

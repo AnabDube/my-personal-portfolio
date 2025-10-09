@@ -92,7 +92,7 @@ export default function AboutPage() {
                 I am a research-oriented Data Analyst with over two years of experience across governance, development, and research sectors. My work focuses on transforming complex data into actionable insights that inform evidence-based decisions. I specialize in data collection, cleaning, and visualization using tools such as Excel, R, SQL, Power BI, and SPSS, while integrating AI-driven approaches to enhance analysis, reporting, and automation.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I combine an analytical mindset with strong communication and research skills, helping teams translate complex data into decisions. Alongside my statistical background, I apply AI and data visualization techniques to uncover patterns and deliver insights that drive meaningful outcomes.
+                I combine an analytical mindset with strong communication and research skills, helping teams translate complex data into decisions. I stay up to date with new tools and methods in data science and AI. I keep learning and improving my craft.
               </p>
 
             </CardContent>

@@ -32,7 +32,7 @@ export const projects: Project[] = [
     category: "Data Analytics",
     status: "Completed",
     year: "2025",
-    duration: "1 month",
+    duration: "2025, 1 month",
     demoUrl: "https://drive.google.com/file/d/1X-xPzdkBTSHFi_oBYkTER6sZrFefSpKe/view?usp=sharing",
     githubUrl: "https://github.com/AnabDube/Data-analysis-projects-anab/blob/main/train_cleaning_query.txt",
     featured: true,
@@ -66,7 +66,7 @@ export const projects: Project[] = [
     category: "AI",
     status: "Completed",
     year: "2025",
-    duration: "1 month",
+    duration: "2025, 1 month",
     demoUrl: "https://docs.google.com/presentation/d/17ZEEYYfbYUw6-do1FfR9VEep4n2WsUT9/edit?usp=sharing&ouid=116419039335006847034&rtpof=true&sd=true",
     githubUrl: "https://docs.google.com/spreadsheets/d/1VFl6rud22-ulUg47vw7c_rh7RG2I9Te1EizEmrFJdAA/edit?usp=sharing",
     featured: true,
@@ -100,7 +100,7 @@ export const projects: Project[] = [
     category: "Data Analytics",
     status: "Completed",
     year: "2025",
-    duration: "1 month",
+    duration: "2025, 1 month",
     demoUrl: "https://drive.google.com/file/d/1naYevjMT4mABP2UYocT1gnGjudIR1p3C/view?usp=sharing",
     githubUrl: "https://docs.google.com/document/d/1_AfHAo9HjyK1BYe81p0TM_OHFK3y3Lor/edit?usp=sharing&ouid=116419039335006847034&rtpof=true&sd=true",
     featured: true,
@@ -225,6 +225,40 @@ export const projects: Project[] = [
       "Automated reporting system",
     ],
   },
+  {
+    id: "student-performance-analysis",
+    title: "Student Performance Analysis",
+    description: "Analyzes how factors such as gender, parental education, and test preparation affect student performance using statistical methods and visualizations.",
+    longDescription: "A comprehensive research project analyzing student performance data to understand the impact of various demographic and educational factors. Used statistical analysis and data visualization techniques to identify patterns and correlations between student characteristics and academic outcomes.",
+    image: "/images/sentiment-analysis-dashboard.png",
+    backgroundImage: "/images/sentiment-analysis-dashboard.png",
+    tags: ["Data Analysis", "Statistics", "Visualization", "Excel", "Power BI", "R"],
+    category: "Research",
+    status: "Completed",
+    year: "2025",
+    duration: "2025, 1 month",
+    demoUrl: "#",
+    githubUrl: "#",
+    featured: false,
+    challenge: "Educational institutions needed to understand which factors most significantly impact student performance to develop targeted interventions.",
+    solution: "Conducted comprehensive statistical analysis of student performance data, examining correlations between demographic factors, preparation methods, and academic outcomes.",
+    impact: "Provided evidence-based insights for educational policy, identified key factors affecting student success, and recommended targeted interventions for improved learning outcomes.",
+    technologies: [
+      { name: "R Programming", description: "Statistical analysis and data modeling" },
+      { name: "Microsoft Excel", description: "Data processing and preliminary analysis" },
+      { name: "Power BI", description: "Interactive visualizations and dashboards" },
+      { name: "Statistical Methods", description: "Correlation analysis and hypothesis testing" },
+      { name: "Data Visualization", description: "Charts and graphs for pattern identification" },
+    ],
+    features: [
+      "Demographic factor analysis",
+      "Statistical correlation studies",
+      "Performance prediction modeling",
+      "Interactive dashboard creation",
+      "Educational policy recommendations",
+      "Comparative analysis across student groups",
+    ],
+  },
 ]
 
 export const categories = ["All", "Data Analytics", "AI", "AI/ML", "Research"]
@@ -240,6 +274,14 @@ export interface UpcomingProject {
 }
 
 export const upcomingProjects: UpcomingProject[] = [
+  {
+    id: "virtual-sql-query-analyst",
+    title: "Virtual SQL Query Analyst Internship (YuvaIntern)",
+    description: "Focused on SQL environment setup, query design, optimization, and reporting. Enhancing SQL expertise through practical weekly tasks on environment setup, query development, optimization, and data reporting.",
+    tools: ["SQL", "Database", "Query Optimization", "Data Reporting"],
+    status: "Upcoming",
+    githubUrl: "#",
+  },
   {
     id: "forage-virtual-internship",
     title: "Forage Virtual Internship",
