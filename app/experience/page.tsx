@@ -59,8 +59,8 @@ const keyMetrics = [
   {
     icon: TrendingUp,
     label: "Projects Completed",
-    value: "15+",
-    description: "Across governance, research, and development sectors",
+    value: "12",
+    description: "Completed Projects (2025)",
   },
   {
     icon: Users,
