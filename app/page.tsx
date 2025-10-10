@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Mail, Github } from "lucide-react"
+import { ArrowRight, Mail, Github, Link as LinkIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -95,6 +95,15 @@ export default function HomePage() {
                 aria-label="GitHub"
               >
                 <Github className="h-6 w-6" />
+              </a>
+              <a
+                href="https://linktr.ee/Anabdube?utm_source=linktree_profile_share&ltsid=a060a474-58e4-4232-b8be-3cbc365fde41"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-accent transition-colors p-3 touch-manipulation hover:scale-110 transition-transform"
+                aria-label="Linktree"
+              >
+                <LinkIcon className="h-6 w-6" />
               </a>
             </div>
           </div>
