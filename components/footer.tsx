@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Mail, Phone, Linkedin } from "lucide-react"
+import { Mail, Phone, Linkedin, Link as LinkIcon } from "lucide-react"
 
 export function Footer() {
   return (
@@ -62,6 +62,15 @@ export function Footer() {
               >
                 <Linkedin className="h-4 w-4" />
                 <span>LinkedIn Profile</span>
+              </a>
+              <a
+                href="https://linktr.ee/Anabdube?utm_source=linktree_profile_share&ltsid=a060a474-58e4-4232-b8be-3cbc365fde41"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center space-x-2 text-muted-foreground hover:text-accent transition-colors"
+              >
+                <LinkIcon className="h-4 w-4" />
+                <span>Linktree</span>
               </a>
             </div>
           </div>

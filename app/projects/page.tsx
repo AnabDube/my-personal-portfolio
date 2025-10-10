@@ -20,7 +20,11 @@ export default function ProjectsPage() {
       project.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
       project.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
 
-    const matchesCategory = selectedCategory === "All" || project.category === selectedCategory
+    // Special handling for Student Performance Analysis - only show in Research category
+    const isStudentPerformanceProject = project.id === "student-performance-analysis"
+    const matchesCategory = selectedCategory === "All"
+      ? !isStudentPerformanceProject // Exclude from "All" if it's the student performance project
+      : project.category === selectedCategory || (selectedCategory === "Research" && isStudentPerformanceProject)
 
     return matchesSearch && matchesCategory
   })

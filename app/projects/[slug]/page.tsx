@@ -4,7 +4,7 @@ import Image from "next/image"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, ExternalLink, Github, Calendar, Tag, Lightbulb, Target, Zap } from "lucide-react"
+import { ArrowLeft, ExternalLink, Github, Calendar, Tag, Lightbulb, Target, Zap, FileText, Database } from "lucide-react"
 import { projects } from "@/app/data/projects"
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -53,18 +53,50 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
         {/* Action Buttons */}
         <div className="mb-8 flex gap-4">
-          <Button asChild className="gap-2">
-            <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="h-4 w-4" />
-              View Demo
-            </a>
-          </Button>
-          <Button asChild variant="outline" className="gap-2 bg-transparent">
-            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-              <Github className="h-4 w-4" />
-              View Code
-            </a>
-          </Button>
+          {project.id === "ai-powered-book-analysis" ? (
+            <>
+              <Button asChild className="gap-2">
+                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                  <FileText className="h-4 w-4" />
+                  View Report
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="gap-2 bg-transparent">
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                  <Database className="h-4 w-4" />
+                  Excel Dataset
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="gap-2 bg-transparent">
+                <a href="https://gamma.app" target="_blank" rel="noopener noreferrer">
+                  <Lightbulb className="h-4 w-4" />
+                  View AI Insights
+                </a>
+              </Button>
+            </>
+          ) : project.id === "student-performance-analysis" ? (
+            <Button asChild className="gap-2">
+              <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                <FileText className="h-4 w-4" />
+                View Excel Analysis
+              </a>
+            </Button>
+          ) : (
+            <>
+              <Button asChild className="gap-2">
+                <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="h-4 w-4" />
+                  View Demo
+                </a>
+              </Button>
+              <Button asChild variant="outline" className="gap-2 bg-transparent">
+                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                  <Github className="h-4 w-4" />
+                  View Code
+                </a>
+              </Button>
+            </>
+          )}
         </div>
 
         {/* Project Overview */}
