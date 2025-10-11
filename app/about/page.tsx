@@ -8,12 +8,12 @@ import { personalInfo, skillCategories } from "@/app/data/skills"
 
 const education = [
   {
-    degree: "Bachelor of Science in Statistics",
+    degree: "Bachelor of Science in Applied Statistics with Computing",
     institution: "University of Eldoret",
     period: "2019 - 2023",
     description:
-      "Comprehensive foundation in statistical theory, data analysis, and mathematical modeling with applications across various domains.",
-    highlights: ["Statistical Theory", "Data Analysis", "Mathematical Modeling", "Research Methods"],
+      "Comprehensive foundation in statistical theory, data analysis, programming and operation research with applications across various domains.",
+    highlights: ["Statistical Theory", "Data Analysis", "Programming", "Research Methods"],
   },
 ]
 
