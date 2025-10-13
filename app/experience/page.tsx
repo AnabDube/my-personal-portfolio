@@ -6,10 +6,27 @@ import Link from "next/link"
 
 const experiences = [
   {
+   title: "Virtual SQL Query Analyst Intern",
+   company: "YuvaIntern",
+   location: "Remote",
+   period: "October 2025 - Present", 
+   type: "Data Analytics",
+   description:
+    "Contributing to SQL-driven analysis projects that focus on data structuring, querying, and business reporting through hands-on, project-based learning.",
+   achievements: [
+    "Design SQL databases and schema for analytical use",
+    "Write and optimize SQL queries for data extraction and reporting",
+    "Clean and transform raw datasets to improve query accuracy",
+    "Analyze business data to identify key performance trends",
+    "Collaborate with mentors and peers to review queries and share insights",
+   ],
+   technologies: ["SQL", "SQLite", "Excel", "Python"], 
+  },
+  {
     title: "Data Analyst Intern",
     company: "Afriment",
     location: "Remote",
-    period: "2024 - Present",
+    period: "June 2025 - August 2025",
     type: "AI & Data Analytics",
     description:
       "Supporting AI-driven data projects focused on social impact and innovation across Africa, combining research and analytics to deliver data-backed insights.",
@@ -25,7 +42,7 @@ const experiences = [
     title: "Research Assistant",
     company: "Centre for Governance Insights (CGI)",
     location: "Nairobi, Kenya",
-    period: "2023 - 2024",
+    period: "2023 - 2025",
     type: "Research & Analytics",
     description:
       "Conducted research and data analysis on governance, security, and public policy projects for evidence-based decision-making.",
