@@ -259,11 +259,28 @@ export const projects: Project[] = [
       "Comparative analysis across student groups",
     ],
   },
+  {
+    id: "virtual-sql-query-analyst",
+    title: "Virtual SQL Query Analyst Internship (YuvaIntern)",
+    description: "Focused on SQL environment setup, query design, optimization, and reporting. Enhancing SQL expertise through practical weekly tasks on environment setup, query development, optimization, and data reporting.",
+    longDescription: "Focused on SQL environment setup, query design, optimization, and reporting. Enhancing SQL expertise through practical weekly tasks on environment setup, query development, optimization, data reporting, and final submission completed in November 2025.",
+    tags: ["SQL", "Database", "Query Optimization", "Data Reporting"],
+    category: "Data Analytics",
+    status: "Completed",
+    year: "2025",
+    duration: "November 2025",
+    githubUrl: "#",
+    featured: false,
+    challenge: "Needed to build SQL expertise through structured internship program with weekly practical assignments.",
+    solution: "Completed weekly tasks on environment setup, query development, optimization strategies, and comprehensive data reporting using SQL best practices.",
+    impact: "Enhanced database querying skills, gained practical experience in SQL optimization, and completed professional SQL analyst training requirements.",
+  },
 ]
 
 export const categories = ["All", "Data Analytics", "AI", "AI/ML", "Research"]
 
 export interface UpcomingProject {
+
   id: string
   title: string
   description: string
@@ -275,35 +292,11 @@ export interface UpcomingProject {
 
 export const upcomingProjects: UpcomingProject[] = [
   {
-    id: "virtual-sql-query-analyst",
-    title: "Virtual SQL Query Analyst Internship (YuvaIntern)",
-    description: "Focused on SQL environment setup, query design, optimization, and reporting. Enhancing SQL expertise through practical weekly tasks on environment setup, query development, optimization, and data reporting.",
-    tools: ["SQL", "Database", "Query Optimization", "Data Reporting"],
-    status: "In Progress",
-    githubUrl: "#",
-  },
-  {
-     id: "yuva-ai-trainee",
-     title: "YuvaIntern AI Trainee Virtual Internship",
-     description: "Six-week virtual internship focused on building applied AI skills through weekly project tasks. Work involves implementing supervised and unsupervised learning models, understanding neural networks, and applying AI techniques to solve real-world problems using Python.",
-     tools: ["Python", "TensorFlow", "Scikit-learn", "Pandas"],
-     status: "Upcoming",
-     githubUrl: "#", // Add your project notebooks link once complete
- },
-  {
     id: "forage-virtual-internship",
     title: "Forage Virtual Internship",
     description: "Analyzing retail customer behavior using R for Quantium's Chips category. Tasks included cleaning transaction and customer data, deriving features like pack size and brand, segmenting customers, and providing strategic recommendations for category management.",
     tools: ["R", "R Studio"],
     status: "Upcoming",
     githubUrl: "#", // Add your R scripts link when available
-  },
-  {
-    id: "insightlens-chrome-extension",
-    title: "InsightLens Chrome Extension",
-    description: "A Chrome extension designed to help analysts, professionals, researchers, students, and stakeholders summarize long texts in a single window, improving productivity and insights extraction.",
-    tools: ["JavaScript", "Chrome Extension API"],
-    status: "In Progress",
-    githubUrl: "#", // Add your extension repository when available
   },
 ]
