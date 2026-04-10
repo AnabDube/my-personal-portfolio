@@ -197,6 +197,11 @@ export default function HomePage() {
               {featuredProjects.map((project) => (
                 <Card key={project.title} className="group hover:shadow-lg transition-shadow touch-manipulation">
                   <CardHeader className="pb-3 sm:pb-6">
+                    {project.caseStudy && (
+                      <Badge className="bg-violet-600/20 text-violet-400 border border-violet-600/30 text-xs w-fit mb-1">
+                        Case Study
+                      </Badge>
+                    )}
                     <CardTitle className="group-hover:text-accent transition-colors text-base sm:text-lg md:text-xl leading-tight">
                       {project.title}
                     </CardTitle>
@@ -206,7 +211,7 @@ export default function HomePage() {
                   </CardHeader>
                   <CardContent className="pt-0">
                     <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-3 sm:mb-4">
-                      {project.tags.map((tag) => (
+                      {project.tags.slice(0, 3).map((tag) => (
                         <Badge key={tag} variant="outline" className="text-xs">
                           {tag}
                         </Badge>
@@ -219,7 +224,7 @@ export default function HomePage() {
                       className="gap-2 p-0 h-auto text-sm min-h-[32px] touch-manipulation"
                     >
                       <Link href={`/projects/${project.id}`}>
-                        Learn More
+                        {project.caseStudy ? "Read Case Study" : "Learn More"}
                         <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
                       </Link>
                     </Button>

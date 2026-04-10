@@ -39,7 +39,7 @@ export default function ProjectsPage() {
         <div className="text-center mb-12">
           <h1 className="mb-4 font-serif text-4xl font-bold text-primary">Projects</h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Explore my portfolio of projects across data analytics, machine learning, and AI automation.
+            Explore my portfolio of work across public finance, governance research, data analytics, and AI automation.
           </p>
         </div>
 
@@ -83,42 +83,58 @@ export default function ProjectsPage() {
                       width={600}
                       height={400}
                       className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                      unoptimized
                     />
                   </div>
                   <CardHeader>
                     <div className="flex items-start justify-between gap-4">
                       <div>
+                        <div className="flex flex-wrap gap-2 mb-2">
+                          <Badge variant="secondary">{project.category}</Badge>
+                          {project.caseStudy && (
+                            <Badge className="bg-violet-600/20 text-violet-400 border border-violet-600/30 text-xs">
+                              Case Study
+                            </Badge>
+                          )}
+                        </div>
                         <CardTitle className="group-hover:text-accent transition-colors">{project.title}</CardTitle>
                         <CardDescription className="mt-2">{project.description}</CardDescription>
                       </div>
-                      <Badge variant="secondary">{project.year}</Badge>
+                      <Badge variant="secondary" className="shrink-0">{project.year}</Badge>
                     </div>
                   </CardHeader>
                   <CardContent>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {project.tags.map((tag) => (
+                      {project.tags.slice(0, 4).map((tag) => (
                         <Badge key={tag} variant="outline" className="text-xs">
                           {tag}
                         </Badge>
                       ))}
+                      {project.tags.length > 4 && (
+                        <Badge variant="outline" className="text-xs">+{project.tags.length - 4}</Badge>
+                      )}
                     </div>
                     <div className="flex items-center gap-3">
                       <Button asChild size="sm" className="gap-2">
                         <Link href={`/projects/${project.id}`}>
-                          View Details
+                          {project.caseStudy ? "Read Case Study" : "View Details"}
                           <ArrowRight className="h-4 w-4" />
                         </Link>
                       </Button>
-                      <Button asChild variant="ghost" size="sm">
-                        <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
-                          <ExternalLink className="h-4 w-4" />
-                        </a>
-                      </Button>
-                      <Button asChild variant="ghost" size="sm">
-                        <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                          <Github className="h-4 w-4" />
-                        </a>
-                      </Button>
+                      {!project.caseStudy && project.demoUrl && (
+                        <Button asChild variant="ghost" size="sm">
+                          <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                            <ExternalLink className="h-4 w-4" />
+                          </a>
+                        </Button>
+                      )}
+                      {!project.caseStudy && project.githubUrl && project.githubUrl !== "#" && (
+                        <Button asChild variant="ghost" size="sm">
+                          <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                            <Github className="h-4 w-4" />
+                          </a>
+                        </Button>
+                      )}
                     </div>
                   </CardContent>
                 </Card>
@@ -141,6 +157,7 @@ export default function ProjectsPage() {
                       width={400}
                       height={300}
                       className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                      unoptimized
                     />
                   </div>
                   <CardHeader>
@@ -148,10 +165,15 @@ export default function ProjectsPage() {
                       <CardTitle className="text-lg group-hover:text-accent transition-colors">
                         {project.title}
                       </CardTitle>
-                      <Badge variant={project.status === "Completed" ? "secondary" : "outline"} className="text-xs">
+                      <Badge variant={project.status === "Completed" ? "secondary" : "outline"} className="text-xs shrink-0">
                         {project.status}
                       </Badge>
                     </div>
+                    {project.caseStudy && (
+                      <Badge className="bg-violet-600/20 text-violet-400 border border-violet-600/30 text-xs w-fit">
+                        Case Study
+                      </Badge>
+                    )}
                     <CardDescription className="text-sm">{project.description}</CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -169,7 +191,7 @@ export default function ProjectsPage() {
                     </div>
                     <Button asChild variant="ghost" size="sm" className="gap-2 p-0 h-auto">
                       <Link href={`/projects/${project.id}`}>
-                        Learn More
+                        {project.caseStudy ? "Read Case Study" : "Learn More"}
                         <ArrowRight className="h-4 w-4" />
                       </Link>
                     </Button>
