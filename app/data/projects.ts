@@ -18,6 +18,13 @@ export interface Project {
   impact?: string
   technologies?: Array<{ name: string; description: string }>
   features?: string[]
+  caseStudy?: {
+    dataNote: string
+    context: string
+    methodology: Array<{ step: string; detail: string }>
+    sampleFindings: Array<{ label: string; value: string; note?: string }>
+    reflection: string
+  }
 }
 
 export const projects: Project[] = [
@@ -51,6 +58,40 @@ export const projects: Project[] = [
       "Automated progress report inputs",
       "Scenario analysis for investment proposals",
     ],
+    caseStudy: {
+      dataNote: "All figures, entity names, and sector references in this case study have been replaced with synthetic data. The methodology, workflow, and analytical approach reflect real practice at the National Treasury.",
+      context: "The Investment Division at the National Treasury oversees a portfolio of state corporations spanning multiple sectors. Each quarter, corporations submit financial performance reports that must be reviewed against their approved budgets before disbursements are processed or further investment proposals considered. The challenge is that submissions often arrive in inconsistent formats, with figures that don't reconcile across statements — making manual review slow and error-prone at scale.",
+      methodology: [
+        {
+          step: "Data Collection & Standardisation",
+          detail: "Budget submissions and expenditure reports are received from each corporation in varying Excel formats. The first step is standardising these into a master template — reconciling column headers, aligning reporting periods, and flagging missing line items. Power Query is used to automate this ingestion for repeat submitters.",
+        },
+        {
+          step: "Validation & Reconciliation",
+          detail: "Each submission is checked for internal consistency: does the cash flow statement reconcile with the income statement? Does the closing cash balance compute correctly? Common errors include net surplus figures that don't match operating profit on the cash flow statement, and expenditure subtotals that don't sum correctly. These are flagged and returned to corporations with written comments before analysis proceeds.",
+        },
+        {
+          step: "Variance Analysis",
+          detail: "Actual expenditure is compared against the approved budget line by line. Variances above a defined threshold (typically 10%) are automatically highlighted. The nature of each variance is assessed — whether driven by legitimate operational changes, timing differences, or unexplained overspend. Corporations flagged for significant overspend are escalated for written explanation.",
+        },
+        {
+          step: "Power BI Dashboard Build",
+          detail: "Validated data feeds into a structured Power BI data model. DAX measures calculate budget utilisation rates, expenditure growth rates, and revenue concentration ratios across the portfolio. The dashboard presents these as KPI cards, comparative bar charts, and trend lines — giving senior officers a portfolio-wide view without opening individual submissions.",
+        },
+        {
+          step: "Report & Recommendation",
+          detail: "Findings are compiled into a structured brief: a one-page executive summary followed by entity-level observations. Recommendations cover approval, conditional approval pending clarification, or referral back. The brief format is consistent across all corporations to support audit trail requirements.",
+        },
+      ],
+      sampleFindings: [
+        { label: "Corporation A — Budget Utilisation", value: "81%", note: "Within acceptable range. Revenue in line with projections." },
+        { label: "Corporation B — Expenditure Growth", value: "+28.4% vs prior year", note: "Driven by staff costs increase. Recruitment approvals requested." },
+        { label: "Corporation C — Revenue Concentration", value: "94% single source", note: "Flagged as sustainability risk. Diversification plan required." },
+        { label: "Corporation D — Variance", value: "+31.6% above approved budget", note: "Escalated. Written justification requested before approval." },
+        { label: "Corporation E — Surplus Remittance", value: "KES 12.4M due", note: "Per Treasury Circular guidelines. Payment schedule agreed." },
+      ],
+      reflection: "The most consistent challenge across state corporation submissions is the disconnect between what is reported in the income statement and what appears in the cash flow statement — particularly around operating profit figures. Building a simple reconciliation check into the intake template has significantly reduced back-and-forth with corporations before analysis can begin. Standardising the report format has also made it easier to spot anomalies quickly, since reviewers know exactly where to look rather than navigating different layouts each quarter.",
+    },
   },
   {
     id: "governance-qualitative-research",
@@ -83,6 +124,48 @@ export const projects: Project[] = [
       "Policy brief and research report preparation",
       "Cross-regional data collection in politically sensitive environments",
     ],
+    caseStudy: {
+      dataNote: "All transcript content, participant details, geographic identifiers, and organisational names from real research engagements are strictly confidential and are not reproduced here. This case study describes methodology, process, and anonymised aggregate findings only.",
+      context: "Governance and security research in the Horn of Africa frequently requires engaging communities where Somali is the primary language — including pastoralist communities, displaced populations, and cross-border traders whose perspectives are underrepresented in policy research. Without language capability, researchers typically rely on local interpreters who may not have training in qualitative research methods, introducing significant accuracy and consistency risks. Working as a Research Assistant at the Centre for Governance Insights, I provided direct Somali-English transcription and translation support across multiple project cycles, enabling analysis that would otherwise have required outsourcing to unvetted third parties.",
+      methodology: [
+        {
+          step: "Survey Tool Design & Piloting",
+          detail: "Before fieldwork, KII guides and FGD discussion frameworks are developed collaboratively with the research lead. Each instrument is reviewed for cultural appropriateness — certain question framings that work in English can carry different connotations in Somali, particularly around governance, authority, and trust. Instruments are piloted with 2–3 respondents, revised, and then translated into Somali before field deployment.",
+        },
+        {
+          step: "Field Data Collection",
+          detail: "Data is collected across multiple regions, often including areas with limited connectivity or active security concerns. Digital collection tools (SurveyToGo, KoboToolbox) are used where possible for structured survey components. Audio recording is used for KIIs and FGDs with participant consent, with field notes maintained as a backup.",
+        },
+        {
+          step: "Somali-English Transcription",
+          detail: "Audio recordings are transcribed verbatim in Somali first, preserving the speaker's exact words before any translation. This two-step approach — transcribe then translate — reduces the risk of meaning loss that occurs when a listener tries to interpret and translate simultaneously. Dialectal variations (particularly between northern and southern Somali dialects) are noted where they affect meaning.",
+        },
+        {
+          step: "Translation & Quality Assurance",
+          detail: "Transcripts are translated into English with attention to preserving original meaning rather than producing polished prose. Idiomatic expressions, proverbs, and culturally-specific references are preserved with explanatory notes rather than translated away. A back-check process is applied to a sample of transcripts — re-reading the English against the Somali audio — to verify consistency before analysis begins.",
+        },
+        {
+          step: "Quantitative Data Cleaning",
+          detail: "Survey datasets (typically 300–500 records per project cycle, aggregating to 1,000+ across the engagement) are cleaned in R and SPSS. This involves handling missing values, standardising categorical responses, checking for enumerator effects, and producing a clean analytical dataset with a documented cleaning log.",
+        },
+        {
+          step: "NVivo Thematic Coding",
+          detail: "Translated transcripts are imported into NVivo and coded thematically. An initial codebook is developed from the research questions, with emergent codes added as new themes surface in the data. Coded segments are reviewed for consistency across transcripts, and frequency and co-occurrence analyses are run to identify dominant and intersecting themes.",
+        },
+        {
+          step: "Policy Brief Output",
+          detail: "Findings are synthesised into policy briefs structured for donor and government audiences: a 2-page summary with headline findings and recommendations, followed by a technical annex with supporting data. Statistical summaries (produced in SPSS/R) are integrated with qualitative evidence from the transcripts to build a mixed-methods narrative.",
+        },
+      ],
+      sampleFindings: [
+        { label: "Participant Engagement Rate", value: "95%", note: "Across survey rounds in politically sensitive regions" },
+        { label: "Transcription Accuracy", value: "99%", note: "Verified through back-check process on sample transcripts" },
+        { label: "Data Accuracy Improvement", value: "+20%", note: "Achieved through tool design iteration and piloting" },
+        { label: "Reporting Efficiency Gain", value: "+25%", note: "From streamlined R/SPSS cleaning workflows" },
+        { label: "Records Analysed", value: "1,000+", note: "Across multiple project cycles, 2023–2025" },
+      ],
+      reflection: "The most technically demanding part of Somali-English translation for research purposes is handling concepts that don't map cleanly across languages — particularly around governance terms like 'accountability', 'legitimacy', and 'corruption', which carry specific institutional connotations in English that may be expressed very differently in Somali community contexts. Preserving these differences rather than smoothing them into standard English is essential for research integrity: what a respondent actually said is more valuable to analysis than a polished paraphrase. The discipline of transcribing first and translating second — rather than simultaneous interpretation — was a significant methodological choice that improved the reliability of the final dataset.",
+    },
   },
   {
     id: "public-finance-monitoring-dashboard",
@@ -114,6 +197,40 @@ export const projects: Project[] = [
       "Capital allocation analysis",
       "Audit-ready summary report outputs",
     ],
+    caseStudy: {
+      dataNote: "This dashboard was built using synthetic data designed to mirror the structure and complexity of real public sector financial monitoring. All entity names, sector references, and figures are illustrative only.",
+      context: "Public sector finance teams overseeing multiple state corporations face a common problem: each entity submits financial reports in slightly different formats, making it difficult to compare performance across the portfolio or spot anomalies without opening every individual file. Spreadsheet-based monitoring works for one or two entities, but becomes unmanageable at scale — and doesn't support the kind of visual pattern recognition that helps analysts catch fiscal risks early. This project builds a reusable Power BI framework specifically designed for multi-entity PFM monitoring, structured around the indicators most relevant to Treasury oversight: budget utilisation, expenditure growth, revenue concentration, and surplus management.",
+      methodology: [
+        {
+          step: "Define the KPI Framework",
+          detail: "Before building anything in Power BI, the monitoring indicators were mapped out based on what matters most for fiscal oversight: budget utilisation rate (actual vs approved), expenditure growth rate (period-on-period), revenue concentration ratio (share of revenue from largest single source), surplus/deficit position, and capital budget execution rate. Each KPI was defined precisely — for example, utilisation is calculated against the approved budget, not the revised estimates — to avoid ambiguity in the DAX measures.",
+        },
+        {
+          step: "Design the Data Model",
+          detail: "A star schema was designed with a central fact table of financial transactions and dimension tables for entities, time periods, budget lines, and expenditure categories. This structure allows the same set of DAX measures to slice correctly across any combination of entity, period, or budget category without requiring separate calculations per entity. The schema was built to be extensible — adding a new corporation requires only adding rows to the entity dimension.",
+        },
+        {
+          step: "Build DAX Measures",
+          detail: "Core measures were written for each KPI: budget utilisation (DIVIDE of actual to approved), variance percentage, period-on-period growth, revenue concentration (share of top source), and a flag measure that returns 1 when variance exceeds the threshold. The flag measure is used to drive conditional formatting across the dashboard — automatically highlighting entities that need attention without manual scanning.",
+        },
+        {
+          step: "Dashboard Layout & Design",
+          detail: "The dashboard is structured across two pages: an executive summary page showing the portfolio-level view (KPI cards, variance ranking, trend line), and an entity drill-down page where individual corporation performance can be examined in detail. Navigation between pages uses bookmarks and buttons rather than tabs, keeping the interface clean for non-technical users such as directors or audit teams.",
+        },
+        {
+          step: "Audit-Ready Report Output",
+          detail: "A formatted report template is built as a companion to the dashboard — a printable one-page summary per entity that pulls the same DAX measures, formatted for inclusion in progress reports or audit files. This ensures that the numbers on the printed report always match the dashboard, eliminating the risk of copy-paste errors in manual reporting.",
+        },
+      ],
+      sampleFindings: [
+        { label: "Entity A — Budget Utilisation", value: "81%", note: "On track. No flags raised." },
+        { label: "Entity B — Revenue Concentration", value: "91% single source", note: "Risk flagged. Dependency on one revenue stream." },
+        { label: "Entity C — Expenditure Growth", value: "+38% YoY", note: "Escalated for written justification. Above 10% threshold." },
+        { label: "Entity D — Capital Execution Rate", value: "44%", note: "Low. Capital budget significantly underspent mid-year." },
+        { label: "Portfolio Avg Utilisation", value: "76%", note: "Healthy overall. Two entities driving aggregate variance." },
+      ],
+      reflection: "The biggest design decision in this dashboard was choosing what NOT to show on the main page. The temptation in PFM dashboards is to surface every available number — but the goal for an oversight team is speed: they need to know within seconds which entities need attention and which are fine. Keeping the executive summary to five KPI cards and a variance ranking table, with full detail one click away, made the dashboard genuinely usable in briefing settings rather than just analytically comprehensive. The conditional formatting on the variance flags — which automatically turns red when a threshold is breached — has been the most practically useful feature, since it removes the need for the reviewer to do any mental calculation to identify priorities.",
+    },
   },
   {
     id: "walmart-sales-dashboard",
