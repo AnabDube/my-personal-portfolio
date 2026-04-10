@@ -1,0 +1,107 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" font-family="Arial, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#0f172a"/>
+  
+  <!-- Header bar -->
+  <rect x="0" y="0" width="800" height="60" fill="#1e293b"/>
+  <text x="32" y="22" fill="#94a3b8" font-size="11" font-weight="600" letter-spacing="2">NATIONAL TREASURY · STATE CORPORATION OVERSIGHT</text>
+  <text x="32" y="46" fill="#f8fafc" font-size="18" font-weight="700">Budget & Expenditure Analysis Dashboard</text>
+  <rect x="680" y="16" width="90" height="26" rx="4" fill="#7c3aed" opacity="0.9"/>
+  <text x="725" y="34" fill="#fff" font-size="11" font-weight="600" text-anchor="middle">FY 2025/26</text>
+
+  <!-- KPI Cards Row -->
+  <!-- Card 1 -->
+  <rect x="32" y="80" width="170" height="80" rx="6" fill="#1e293b"/>
+  <text x="48" y="102" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="1">PORTFOLIO SIZE</text>
+  <text x="48" y="132" fill="#a78bfa" font-size="28" font-weight="700">10+</text>
+  <text x="48" y="150" fill="#64748b" font-size="10">State Corporations</text>
+
+  <!-- Card 2 -->
+  <rect x="214" y="80" width="170" height="80" rx="6" fill="#1e293b"/>
+  <text x="230" y="102" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="1">BUDGET UTILISATION</text>
+  <text x="230" y="132" fill="#34d399" font-size="28" font-weight="700">78.4%</text>
+  <text x="230" y="150" fill="#64748b" font-size="10">Avg across portfolio</text>
+
+  <!-- Card 3 -->
+  <rect x="396" y="80" width="170" height="80" rx="6" fill="#1e293b"/>
+  <text x="412" y="102" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="1">EXPENDITURE VARIANCE</text>
+  <text x="412" y="132" fill="#fb923c" font-size="28" font-weight="700">+12.3%</text>
+  <text x="412" y="150" fill="#64748b" font-size="10">vs approved budget</text>
+
+  <!-- Card 4 -->
+  <rect x="578" y="80" width="190" height="80" rx="6" fill="#1e293b"/>
+  <text x="594" y="102" fill="#94a3b8" font-size="10" font-weight="600" letter-spacing="1">PROPOSALS REVIEWED</text>
+  <text x="594" y="132" fill="#60a5fa" font-size="28" font-weight="700">24</text>
+  <text x="594" y="150" fill="#64748b" font-size="10">Investment proposals FY</text>
+
+  <!-- Bar Chart: Budget vs Expenditure by Corp -->
+  <rect x="32" y="178" width="440" height="240" rx="6" fill="#1e293b"/>
+  <text x="48" y="202" fill="#f1f5f9" font-size="12" font-weight="600">Expenditure vs Budget by Corporation</text>
+  <!-- Axes -->
+  <line x1="80" y1="220" x2="80" y2="400" stroke="#334155" stroke-width="1"/>
+  <line x1="80" y1="400" x2="450" y2="400" stroke="#334155" stroke-width="1"/>
+  <!-- Bars Corp A -->
+  <rect x="98"  y="280" width="22" height="120" rx="2" fill="#7c3aed" opacity="0.85"/>
+  <rect x="122" y="300" width="22" height="100" rx="2" fill="#a78bfa" opacity="0.7"/>
+  <!-- Bars Corp B -->
+  <rect x="168" y="265" width="22" height="135" rx="2" fill="#7c3aed" opacity="0.85"/>
+  <rect x="192" y="290" width="22" height="110" rx="2" fill="#a78bfa" opacity="0.7"/>
+  <!-- Bars Corp C -->
+  <rect x="238" y="310" width="22" height="90"  rx="2" fill="#7c3aed" opacity="0.85"/>
+  <rect x="262" y="330" width="22" height="70"  rx="2" fill="#a78bfa" opacity="0.7"/>
+  <!-- Bars Corp D -->
+  <rect x="308" y="255" width="22" height="145" rx="2" fill="#fb923c" opacity="0.9"/>
+  <rect x="332" y="300" width="22" height="100" rx="2" fill="#a78bfa" opacity="0.7"/>
+  <!-- Bars Corp E -->
+  <rect x="378" y="290" width="22" height="110" rx="2" fill="#7c3aed" opacity="0.85"/>
+  <rect x="402" y="310" width="22" height="90"  rx="2" fill="#a78bfa" opacity="0.7"/>
+  <!-- X labels -->
+  <text x="120" y="415" fill="#64748b" font-size="9" text-anchor="middle">Corp A</text>
+  <text x="190" y="415" fill="#64748b" font-size="9" text-anchor="middle">Corp B</text>
+  <text x="260" y="415" fill="#64748b" font-size="9" text-anchor="middle">Corp C</text>
+  <text x="330" y="415" fill="#fb923c" font-size="9" text-anchor="middle" font-weight="700">Corp D ⚠</text>
+  <text x="400" y="415" fill="#64748b" font-size="9" text-anchor="middle">Corp E</text>
+  <!-- Legend -->
+  <rect x="88" y="430" width="10" height="10" rx="2" fill="#7c3aed"/>
+  <text x="102" y="439" fill="#94a3b8" font-size="9">Approved Budget</text>
+  <rect x="190" y="430" width="10" height="10" rx="2" fill="#a78bfa" opacity="0.7"/>
+  <text x="204" y="439" fill="#94a3b8" font-size="9">Actual Expenditure</text>
+
+  <!-- Right panel: Variance table + trend -->
+  <rect x="488" y="178" width="280" height="240" rx="6" fill="#1e293b"/>
+  <text x="504" y="202" fill="#f1f5f9" font-size="12" font-weight="600">Variance Tracker</text>
+  <!-- Table rows -->
+  <rect x="504" y="210" width="248" height="22" rx="3" fill="#0f172a"/>
+  <text x="512" y="225" fill="#64748b" font-size="9" font-weight="600">ENTITY</text>
+  <text x="638" y="225" fill="#64748b" font-size="9" font-weight="600">VARIANCE</text>
+  <text x="720" y="225" fill="#64748b" font-size="9" font-weight="600">STATUS</text>
+
+  <text x="512" y="248" fill="#cbd5e1" font-size="10">Corp A</text>
+  <text x="638" y="248" fill="#34d399" font-size="10">-2.1%</text>
+  <text x="720" y="248" fill="#34d399" font-size="9">✓ OK</text>
+
+  <text x="512" y="268" fill="#cbd5e1" font-size="10">Corp B</text>
+  <text x="638" y="268" fill="#34d399" font-size="10">+4.7%</text>
+  <text x="720" y="268" fill="#fbbf24" font-size="9">⚡ Watch</text>
+
+  <text x="512" y="288" fill="#cbd5e1" font-size="10">Corp C</text>
+  <text x="638" y="288" fill="#34d399" font-size="10">-8.3%</text>
+  <text x="720" y="288" fill="#34d399" font-size="9">✓ OK</text>
+
+  <text x="512" y="308" fill="#cbd5e1" font-size="10">Corp D</text>
+  <text x="638" y="308" fill="#fb923c" font-size="10">+31.6%</text>
+  <text x="720" y="308" fill="#fb923c" font-size="9">⚠ Flag</text>
+
+  <text x="512" y="328" fill="#cbd5e1" font-size="10">Corp E</text>
+  <text x="638" y="328" fill="#34d399" font-size="10">+3.2%</text>
+  <text x="720" y="328" fill="#fbbf24" font-size="9">⚡ Watch</text>
+
+  <!-- Mini trend line -->
+  <text x="504" y="362" fill="#94a3b8" font-size="10" font-weight="600">Portfolio Expenditure Trend</text>
+  <polyline points="504,400 540,388 576,392 612,375 648,380 684,365 720,358" stroke="#7c3aed" stroke-width="2" fill="none"/>
+  <polyline points="504,400 540,388 576,392 612,375 648,380 684,365 720,358 720,410 504,410" fill="#7c3aed" opacity="0.1"/>
+
+  <!-- Tools row -->
+  <rect x="0" y="435" width="800" height="15" fill="#1e293b"/>
+  <text x="32" y="446" fill="#475569" font-size="9">Tools: Microsoft Excel · Power BI · DAX · PFM Frameworks · National Treasury Guidelines</text>
+</svg>
