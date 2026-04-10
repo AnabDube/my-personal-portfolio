@@ -16,9 +16,11 @@ const skills = [
   "Python",
   "SQL",
   "R",
-  "AI/ML",
-  "Data Visualization",
-  "Statistical Analysis",
+  "SPSS",
+  "Budget Analysis",
+  "PFM",
+  "Data Visualisation",
+  "Somali · Kiswahili · English",
 ]
 
 export default function HomePage() {
@@ -47,7 +49,7 @@ export default function HomePage() {
             </p>
 
             <p className="mb-6 sm:mb-8 text-sm sm:text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4 leading-relaxed animate-fade-in-up">
-              I turn raw data into actionable insights through AI, analytics, and visualization.
+              Investment Officer at Kenya's National Treasury — turning complex public finance data into clear, accountable insights for national-level decisions.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-6 sm:mb-8 px-4 animate-fade-in-up">
@@ -105,6 +107,44 @@ export default function HomePage() {
               >
                 <LinkIcon className="h-6 w-6" />
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What I Do */}
+      <section className="py-12 sm:py-16">
+        <div className="container px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-4xl">
+            <h2 className="mb-8 font-serif text-xl sm:text-2xl md:text-3xl font-bold text-primary text-center">
+              What I Do
+            </h2>
+            <div className="grid gap-6 md:grid-cols-3">
+              {[
+                {
+                  title: "Fiscal Oversight & Budget Analysis",
+                  description: "Monitoring financial performance of state corporations, identifying expenditure variances, evaluating investment proposals, and preparing data-driven briefs for national-level decision-makers.",
+                  icon: "📊",
+                },
+                {
+                  title: "Governance & Policy Research",
+                  description: "Qualitative and quantitative research on anti-corruption, PFM reforms, transparency, and illicit financial flows — including Somali-English transcription and translation of field interviews.",
+                  icon: "🏛️",
+                },
+                {
+                  title: "Data Systems & Visualisation",
+                  description: "Building Power BI dashboards, automating reporting workflows, and designing data collection tools that make complex information accessible and actionable for diverse stakeholders.",
+                  icon: "⚡",
+                },
+              ].map((item) => (
+                <Card key={item.title} className="text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="pt-6">
+                    <div className="text-4xl mb-4">{item.icon}</div>
+                    <h3 className="font-semibold text-base mb-3 text-primary">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>

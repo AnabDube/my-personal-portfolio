@@ -10,10 +10,10 @@ export function Footer() {
           <div className="space-y-3">
             <h3 className="font-serif text-lg font-semibold text-primary">Anab Ali Dube</h3>
             <p className="text-sm text-muted-foreground">
-              Data Analyst | AI Researcher | Insight Storyteller
+              Investment Officer · Budget & Data Analyst · Public Finance & Governance
             </p>
             <p className="text-sm text-muted-foreground">
-              I turn raw data into actionable insights through AI, analytics, and visualization.
+              Making complex public finance data clear, accountable, and actionable.
             </p>
           </div>
 

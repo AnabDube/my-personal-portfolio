@@ -64,12 +64,13 @@ export const toolsAndTechnologies = [
 
 export const personalInfo = {
   name: "Anab Ali Dube",
-  title: "Data Analyst | AI Researcher | Insight Storyteller",
+  title: "Investment Officer · Budget & Data Analyst · Public Finance & Governance",
   location: "Nairobi, Kenya",
   email: "anabdube030@gmail.com",
   phone: "+254757078420",
-  education: "B.Sc Statistics",
-  availability: "Freelance Available",
-  bio: "I'm Anab, a data analyst with over 2 years of experience working across research, development, and governance sectors. I specialize in collecting, cleaning, and analyzing data to uncover insights that drive real-world decisions. I work with tools like Excel, SQL, R, Power BI, and SPSS, and I often leverage AI to speed up analysis, generate reports, and automate repetitive tasks.\n\nI combine an analytical mindset with strong communication and research skills, helping teams translate complex data into decisions. I'm adaptable, detail-oriented, and comfortable working across both technical and non-technical teams.",
+  education: "B.Sc Applied Statistics",
+  availability: "Open to Opportunities",
+  languages: "English · Kiswahili · Somali",
+  bio: "I'm Anab, an Investment Officer at the National Treasury & Economic Planning with over three years of experience spanning public financial management, governance research, and data analysis. I monitor the financial performance of 10+ state corporations, prepare budget analysis reports for national-level decision-makers, and evaluate investment proposals from public enterprises.\n\nBefore joining the Treasury, I worked as a Research Assistant at the Centre for Governance Insights, conducting qualitative and quantitative research on governance, security, and anti-corruption policy — including transcribing and translating Somali-language field interviews (KIIs and FGDs) with 99% accuracy. I'm fluent in English, Kiswahili, and Somali, which gives me a distinct edge in research across the Horn of Africa.\n\nI work with Excel, Power BI, R, SQL, SPSS, and Python, and I combine strong analytical skills with a commitment to making complex public finance data clear and actionable.",
   resumeUrl: "https://drive.google.com/file/d/1CFDiNH75WStSVsXkYX3v1Dz72pWs40A0/view?usp=sharing",
 }

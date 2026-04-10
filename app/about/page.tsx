@@ -89,14 +89,36 @@ export default function AboutPage() {
             </CardHeader>
             <CardContent className="space-y-4">
               <p className="text-muted-foreground leading-relaxed">
-                I am a research-oriented Data Analyst with over two years of experience across governance, development, and research sectors. My work focuses on transforming complex data into actionable insights that inform evidence-based decisions. I specialize in data collection, cleaning, and visualization using tools such as Excel, R, SQL, Power BI, and SPSS, while integrating AI-driven approaches to enhance analysis, reporting, and automation.
+                Investment Officer at the National Treasury & Economic Planning with over three years of experience spanning public financial management, governance research, and data analysis across public and development sectors. I monitor the financial performance of 10+ state corporations, prepare budget analysis reports that inform national-level decisions, and evaluate investment proposals from public enterprises against PFM frameworks.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I combine an analytical mindset with strong communication and research skills, helping teams translate complex data into decisions. I stay up to date with new tools and methods in data science and AI. I keep learning and improving my craft.
+                Before joining the Treasury, I spent nearly three years as a Research Assistant at the Centre for Governance Insights, conducting project-based qualitative and quantitative research on governance, anti-corruption, and security policy. A distinctive part of that work was transcribing and translating Somali-language field interviews (KIIs and FGDs) into English with 99% accuracy — enabling research in communities otherwise difficult to reach. I am fluent in English, Kiswahili, and Somali.
               </p>
-
+              <p className="text-muted-foreground leading-relaxed">
+                I work with Excel, Power BI, R, SPSS, SQL, and Python, and I'm committed to making complex financial and governance data clear, accountable, and actionable for decision-makers.
+              </p>
             </CardContent>
           </Card>
+        </section>
+
+        {/* Languages */}
+        <section className="mb-16">
+          <h2 className="mb-8 font-serif text-3xl font-bold text-primary">Languages</h2>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              { lang: "English", level: "Fluent", note: "Professional proficiency" },
+              { lang: "Kiswahili", level: "Fluent", note: "Professional proficiency" },
+              { lang: "Somali", level: "Fluent", note: "Transcription & translation — KIIs, FGDs, field research" },
+            ].map((l) => (
+              <Card key={l.lang} className="text-center">
+                <CardContent className="pt-6">
+                  <div className="mb-2 font-serif text-2xl font-bold text-primary">{l.lang}</div>
+                  <div className="text-sm font-medium text-accent mb-1">{l.level}</div>
+                  <div className="text-xs text-muted-foreground">{l.note}</div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </section>
 
         {/* Education */}
